@@ -14,6 +14,13 @@ const App = ({ Component, pageProps }: AppProps) => (
         body: `Quicksand, ${fallbackFonts}`,
         heading: `Raleway, ${fallbackFonts}`,
       },
+      components: {
+        Heading: {
+          baseStyle: {
+            fontWeight: 200,
+          },
+        },
+      },
     })}
   >
     <Component {...pageProps} />
