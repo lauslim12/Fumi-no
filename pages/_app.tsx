@@ -12,7 +12,7 @@ const App = ({ Component, pageProps }: AppProps) => (
     theme={extendTheme({
       fonts: {
         body: `Quicksand, ${fallbackFonts}`,
-        heading: `Quicksand, ${fallbackFonts}`,
+        heading: `Raleway, ${fallbackFonts}`,
       },
     })}
   >

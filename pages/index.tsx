@@ -1,9 +1,10 @@
 import { memo } from 'react';
+import Layout from '../components/Layout';
 
 const Home = () => (
-  <div>
+  <Layout title={['Home']}>
     <p>Hello World!</p>
-  </div>
+  </Layout>
 );
 
 export default memo(Home);
