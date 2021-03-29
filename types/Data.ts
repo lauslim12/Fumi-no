@@ -5,7 +5,7 @@
 export type Data = {
   id: string;
   blessing: string;
-  color: 'red' | 'green' | 'blue' | 'yellow';
+  color: 'red' | 'green' | 'blue' | 'yellow' | 'transparent';
   day:
     | 1
     | 2
