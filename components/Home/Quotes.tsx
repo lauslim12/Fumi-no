@@ -14,9 +14,9 @@ const Quotes = () => {
 
   return (
     <VStack mt={5} textAlign="center">
-      <VStack border="1px solid black" p={5} rounded="1rem">
-        <Text fontStyle="italic">{`"${quote.quote}"`}</Text>
-        <Text>{`— ${quote.author}`}</Text>
+      <VStack>
+        <Text fontWeight="700" fontStyle="italic">{`"${quote.quote}"`}</Text>
+        <Text fontWeight="700">{`— ${quote.author}`}</Text>
       </VStack>
     </VStack>
   );
