@@ -45,7 +45,7 @@ const AdditionForm = ({ blessing, color, setBlessing, setColor }: Props) => (
         <Wrap>
           {radioValues.map((value) => (
             <WrapItem key={value}>
-              <Radio value={value} colorScheme="red">
+              <Radio id={value} value={value} colorScheme="red">
                 <Box bg={`${value}.300`} p={1} borderRadius="md">
                   {value}
                 </Box>
