@@ -46,6 +46,8 @@ const AdditionModal = ({ open, setOpen, data, setData }: Props) => {
 
     setData((prevData) => [...prevData, newData]);
     setOpen(false);
+    setBlessing('');
+    setColor('red');
 
     toast({
       title: 'Data added!',
