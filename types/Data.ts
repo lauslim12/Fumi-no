@@ -1,3 +1,4 @@
+import { Dispatch, SetStateAction } from 'react';
 import { Colors, Days, Months } from './Enums';
 
 /**
@@ -25,6 +26,8 @@ export type Configuration = {
  */
 type LocalStorageDataStore = Configuration & {
   data: Data[];
+  setName: Dispatch<SetStateAction<string>>;
+  setData: Dispatch<SetStateAction<Data[]>>;
 };
 
 export default LocalStorageDataStore;
