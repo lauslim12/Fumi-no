@@ -14,22 +14,22 @@ import {
   useToast,
   VStack,
 } from '@chakra-ui/react';
-import { Dispatch, FormEvent, memo, SetStateAction, useState } from 'react';
+import { Dispatch, FormEvent, memo, SetStateAction, useContext, useState } from 'react';
 import { Data } from '../types/Data';
 import { Colors, Days, Months } from '../types/Enums';
+import UserContext from '../utils/config';
 import AdditionForm from './AdditionForm';
 
 type Props = {
   open: boolean;
   setOpen: Dispatch<SetStateAction<boolean>>;
-  data: Data[];
-  setData: Dispatch<SetStateAction<Data[]>>;
-  index: number;
+  currentData: Data;
 };
 
-const AdditionModal = ({ open, setOpen, data, setData, index }: Props) => {
-  const [blessing, setBlessing] = useState(data[index].blessing);
-  const [color, setColor] = useState(data[index].color);
+const EditModal = ({ open, setOpen, currentData }: Props) => {
+  const { data, setData } = useContext(UserContext);
+  const [blessing, setBlessing] = useState(currentData.blessing);
+  const [color, setColor] = useState(currentData.color);
   const toast = useToast();
 
   const handleSubmit = (e: FormEvent) => {
@@ -37,14 +37,15 @@ const AdditionModal = ({ open, setOpen, data, setData, index }: Props) => {
 
     const currentDate = new Date();
     const newData: Data = {
-      id: `${currentDate.getMonth()}-${currentDate.getFullYear()}-${color}-${currentDate.getTime()}`,
+      id: currentData.id,
       blessing,
       color,
       day: currentDate.getDate() as Days,
       month: currentDate.getMonth() as Months,
       year: currentDate.getFullYear(),
     };
-    const newState = [...data.slice(0, index), newData, ...data.slice(index + 1)];
+    const indexOfData = data.findIndex((blessing) => blessing.id === currentData.id);
+    const newState = [...data.slice(0, indexOfData), newData, ...data.slice(indexOfData + 1)];
 
     setData(() => newState);
     setOpen(false);
@@ -52,6 +53,24 @@ const AdditionModal = ({ open, setOpen, data, setData, index }: Props) => {
     toast({
       title: 'Data edited!',
       description: 'Your current data has been edited!',
+      status: 'success',
+      isClosable: true,
+      duration: 5000,
+    });
+  };
+
+  const handleDelete = (e: FormEvent) => {
+    e.preventDefault();
+
+    const indexOfData = data.findIndex((blessing) => blessing.id === currentData.id);
+    const newState = [...data.slice(0, indexOfData), ...data.slice(indexOfData + 1)];
+
+    setData(() => newState);
+    setOpen(false);
+
+    toast({
+      title: 'Data deleted!',
+      description: 'Your current data has been deleted!',
       status: 'success',
       isClosable: true,
       duration: 5000,
@@ -74,7 +93,7 @@ const AdditionModal = ({ open, setOpen, data, setData, index }: Props) => {
             </Alert>
 
             <chakra.div>
-              <chakra.p>Input your data here!</chakra.p>
+              <chakra.p>Edit your data here!</chakra.p>
             </chakra.div>
 
             <AdditionForm
@@ -91,6 +110,9 @@ const AdditionModal = ({ open, setOpen, data, setData, index }: Props) => {
             <Button colorScheme="green" type="submit">
               Edit Data
             </Button>
+            <Button colorScheme="red" onClick={handleDelete}>
+              Delete Data
+            </Button>
             <Button colorScheme="blue" onClick={() => setOpen(false)}>
               Close
             </Button>
@@ -101,4 +123,4 @@ const AdditionModal = ({ open, setOpen, data, setData, index }: Props) => {
   );
 };
 
-export default memo(AdditionModal);
+export default memo(EditModal);
