@@ -17,8 +17,9 @@ import {
   Wrap,
   WrapItem,
 } from '@chakra-ui/react';
-import { Dispatch, memo, SetStateAction, useState } from 'react';
+import { Dispatch, memo, SetStateAction, useContext, useState } from 'react';
 import { Colors } from '../types/Enums';
+import UserContext from '../utils/config';
 import { radioValues } from '../utils/constants';
 import { numberToMonth } from '../utils/date';
 
@@ -48,6 +49,7 @@ const AdditionForm = ({
   setYear,
 }: Props) => {
   const [isToday, setIsToday] = useState(true);
+  const { isNotTodayHidden } = useContext(UserContext);
 
   const checkboxHandler = () => {
     if (!isToday) {
@@ -63,63 +65,67 @@ const AdditionForm = ({
 
   return (
     <VStack spacing={4}>
-      <FormControl id="day" isRequired isDisabled={isToday}>
-        <FormLabel>Day of the good thing.</FormLabel>
-        <NumberInput
-          value={day}
-          min={1}
-          max={31}
-          onChange={(value) => setDay(parseInt(value.toString(), 10))}
-          isDisabled={isToday}
-        >
-          <NumberInputField />
-          <NumberInputStepper>
-            <NumberIncrementStepper />
-            <NumberDecrementStepper />
-          </NumberInputStepper>
-        </NumberInput>
-        <FormHelperText>In case you want to fill in the other days!</FormHelperText>
-      </FormControl>
+      {JSON.parse(isNotTodayHidden) ? (
+        <>
+          <FormControl id="day" isRequired isDisabled={isToday}>
+            <FormLabel>Day of the good thing.</FormLabel>
+            <NumberInput
+              value={day}
+              min={1}
+              max={31}
+              onChange={(value) => setDay(parseInt(value.toString(), 10))}
+              isDisabled={isToday}
+            >
+              <NumberInputField />
+              <NumberInputStepper>
+                <NumberIncrementStepper />
+                <NumberDecrementStepper />
+              </NumberInputStepper>
+            </NumberInput>
+            <FormHelperText>In case you want to fill in the other days!</FormHelperText>
+          </FormControl>
 
-      <FormControl id="month" isRequired isDisabled={isToday}>
-        <FormLabel>Month of the good thing.</FormLabel>
-        <Select
-          value={month}
-          variant="filled"
-          onChange={({ currentTarget: { value } }) => setMonth(parseInt(value.toString(), 10))}
-        >
-          {Array(12)
-            .fill(0)
-            .map((_, i) => (
-              <option key={i} value={i}>
-                {numberToMonth(i)}
-              </option>
-            ))}
-        </Select>
-        <FormHelperText>In case you want to fill in the other days!</FormHelperText>
-      </FormControl>
+          <FormControl id="month" isRequired isDisabled={isToday}>
+            <FormLabel>Month of the good thing.</FormLabel>
+            <Select
+              value={month}
+              variant="filled"
+              onChange={({ currentTarget: { value } }) => setMonth(parseInt(value.toString(), 10))}
+            >
+              {Array(12)
+                .fill(0)
+                .map((_, i) => (
+                  <option key={i} value={i}>
+                    {numberToMonth(i)}
+                  </option>
+                ))}
+            </Select>
+            <FormHelperText>In case you want to fill in the other days!</FormHelperText>
+          </FormControl>
 
-      <FormControl id="year" isRequired isDisabled={isToday}>
-        <FormLabel>Year of the good thing.</FormLabel>
-        <NumberInput
-          value={year}
-          min={new Date().getFullYear() - 5}
-          max={new Date().getFullYear() + 5}
-          onChange={(value) => setYear(parseInt(value.toString(), 10))}
-          isDisabled={isToday}
-        >
-          <NumberInputField />
-          <NumberInputStepper>
-            <NumberIncrementStepper />
-            <NumberDecrementStepper />
-          </NumberInputStepper>
-        </NumberInput>
-        <FormHelperText>Minimum/maximum year is five years from now!</FormHelperText>
-      </FormControl>
+          <FormControl id="year" isRequired isDisabled={isToday}>
+            <FormLabel>Year of the good thing.</FormLabel>
+            <NumberInput
+              value={year}
+              min={new Date().getFullYear() - 5}
+              max={new Date().getFullYear() + 5}
+              onChange={(value) => setYear(parseInt(value.toString(), 10))}
+              isDisabled={isToday}
+            >
+              <NumberInputField />
+              <NumberInputStepper>
+                <NumberIncrementStepper />
+                <NumberDecrementStepper />
+              </NumberInputStepper>
+            </NumberInput>
+            <FormHelperText>Minimum/maximum year is five years from now!</FormHelperText>
+          </FormControl>
 
-      <Checkbox colorScheme="green" isChecked={isToday} onChange={checkboxHandler}>
-        Today date.
-      </Checkbox>
+          <Checkbox colorScheme="green" isChecked={isToday} onChange={checkboxHandler}>
+            Today date.
+          </Checkbox>
+        </>
+      ) : null}
 
       <FormControl id="blessing" isRequired>
         <FormLabel>Good thing that happened today.</FormLabel>

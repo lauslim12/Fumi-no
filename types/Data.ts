@@ -16,10 +16,12 @@ export type Data = {
 
 /**
  * Configurations to customize the application.
+ * Not using boolean as it might cause problems with the local storage.
  */
 export type Configuration = {
   name: string;
   data: Data[];
+  isNotTodayHidden: 'true' | 'false';
 };
 
 /**
@@ -28,6 +30,7 @@ export type Configuration = {
 type LocalStorageDataStore = Configuration & {
   setName: Dispatch<SetStateAction<string>>;
   setData: Dispatch<SetStateAction<Data[]>>;
+  setIsNotTodayHidden: Dispatch<SetStateAction<'true' | 'false'>>;
 };
 
 export default LocalStorageDataStore;

@@ -8,8 +8,10 @@ import { defaultConfigurations } from './constants';
 export const defaultState: LocalStorageDataStore = {
   name: defaultConfigurations.name,
   data: defaultConfigurations.data,
+  isNotTodayHidden: defaultConfigurations.isNotTodayHidden,
   setName: () => {},
   setData: () => {},
+  setIsNotTodayHidden: () => {},
 };
 
 /**

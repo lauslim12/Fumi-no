@@ -13,14 +13,14 @@ import {
   VStack,
 } from '@chakra-ui/react';
 import { memo, useContext, useState } from 'react';
-import { FaCodeBranch, FaBookOpen, FaBarcode, FaMoon } from 'react-icons/fa';
+import { FaCodeBranch, FaBookOpen, FaBarcode, FaMoon, FaTable } from 'react-icons/fa';
 import BackupModal from '../BackupModal';
 import AdditionModal from '../AdditionModal';
 import UserContext from '../../utils/config';
 
 const Configurations = () => {
   const { colorMode, toggleColorMode } = useColorMode();
-  const { name, setName } = useContext(UserContext);
+  const { name, setName, isNotTodayHidden, setIsNotTodayHidden } = useContext(UserContext);
   const [openAdditionModal, setOpenAdditionModal] = useState(false);
   const [openBackupModal, setOpenBackupModal] = useState(false);
 
@@ -54,6 +54,19 @@ const Configurations = () => {
               colorScheme="green"
               isChecked={colorMode === 'dark'}
               onChange={() => toggleColorMode()}
+            />
+          </HStack>
+
+          <HStack spacing={4}>
+            <Icon as={FaTable} boxSize={5} />
+            <Text fontSize="lg">Hidden date settings</Text>
+            <Switch
+              colorScheme="green"
+              isChecked={!JSON.parse(isNotTodayHidden) as boolean}
+              onChange={() => {
+                if (isNotTodayHidden === 'true') return setIsNotTodayHidden('false');
+                return setIsNotTodayHidden('true');
+              }}
             />
           </HStack>
 
