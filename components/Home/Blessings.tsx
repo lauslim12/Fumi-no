@@ -78,7 +78,10 @@ const Blessings = () => {
       </Flex>
 
       {allData.length ? (
-        <Grid templateColumns={{ lg: 'repeat(7, 1fr)' }} gap={3}>
+        <Grid
+          templateColumns={['1fr', 'repeat(3, 1fr)', 'repeat(5, 1fr)', 'repeat(7, 1fr)']}
+          gap={3}
+        >
           {allData.map((blessing) => (
             <BlessingCard key={blessing.id} data={blessing} />
           ))}
