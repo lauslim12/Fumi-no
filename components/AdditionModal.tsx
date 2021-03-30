@@ -29,6 +29,9 @@ const AdditionModal = ({ open, setOpen }: Props) => {
   const { setData } = useContext(UserContext);
   const [blessing, setBlessing] = useState('');
   const [color, setColor] = useState('red' as Colors);
+  const [day, setDay] = useState(new Date().getDate());
+  const [month, setMonth] = useState(new Date().getMonth());
+  const [year, setYear] = useState(new Date().getFullYear());
   const toast = useToast();
 
   const handleSubmit = (e: FormEvent) => {
@@ -39,15 +42,18 @@ const AdditionModal = ({ open, setOpen }: Props) => {
       id: `${currentDate.getMonth()}-${currentDate.getFullYear()}-${color}-${currentDate.getTime()}`,
       blessing,
       color,
-      day: currentDate.getDate() as Days,
-      month: currentDate.getMonth() as Months,
-      year: currentDate.getFullYear(),
+      day: day as Days,
+      month: month as Months,
+      year: year,
     };
 
     setData((prevData) => [...prevData, newData]);
     setOpen(false);
     setBlessing('');
     setColor('red');
+    setDay(new Date().getDate());
+    setMonth(new Date().getMonth());
+    setYear(new Date().getFullYear());
 
     toast({
       title: 'Data added!',
@@ -80,8 +86,14 @@ const AdditionModal = ({ open, setOpen }: Props) => {
             <AdditionForm
               blessing={blessing}
               color={color}
+              day={day}
+              month={month}
+              year={year}
               setBlessing={setBlessing}
               setColor={setColor as Dispatch<SetStateAction<Colors | string>>}
+              setDay={setDay}
+              setMonth={setMonth}
+              setYear={setYear}
             />
           </VStack>
         </ModalBody>

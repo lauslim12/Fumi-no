@@ -30,19 +30,21 @@ const EditModal = ({ open, setOpen, currentData }: Props) => {
   const { data, setData } = useContext(UserContext);
   const [blessing, setBlessing] = useState(currentData.blessing);
   const [color, setColor] = useState(currentData.color);
+  const [day, setDay] = useState(currentData.day as number);
+  const [month, setMonth] = useState(currentData.month as number);
+  const [year, setYear] = useState(currentData.year);
   const toast = useToast();
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
 
-    const currentDate = new Date();
     const newData: Data = {
       id: currentData.id,
       blessing,
       color,
-      day: currentDate.getDate() as Days,
-      month: currentDate.getMonth() as Months,
-      year: currentDate.getFullYear(),
+      day: day as Days,
+      month: month as Months,
+      year: year,
     };
     const indexOfData = data.findIndex((blessing) => blessing.id === currentData.id);
     const newState = [...data.slice(0, indexOfData), newData, ...data.slice(indexOfData + 1)];
@@ -99,8 +101,14 @@ const EditModal = ({ open, setOpen, currentData }: Props) => {
             <AdditionForm
               blessing={blessing}
               color={color}
+              day={day}
+              month={month}
+              year={year}
               setBlessing={setBlessing}
               setColor={setColor as Dispatch<SetStateAction<Colors | string>>}
+              setDay={setDay}
+              setMonth={setMonth}
+              setYear={setYear}
             />
           </VStack>
         </ModalBody>
