@@ -1,14 +1,15 @@
-import { Flex, Grid, Heading, HStack, Spacer, Text, VStack } from '@chakra-ui/layout';
-import { memo, useMemo, useState } from 'react';
+import { Flex, Grid, Heading, HStack, Spacer, VStack } from '@chakra-ui/layout';
+import { memo, useContext, useMemo, useState } from 'react';
 import { FaChevronCircleLeft, FaChevronCircleRight, FaChevronCircleDown } from 'react-icons/fa';
-import sampleData from '../../db/sampleData';
+import UserContext from '../../utils/config';
 import { numberToMonth } from '../../utils/date';
 import CustomIconBtn from '../CustomIconBtn';
 import BlessingCard from './BlessingCard';
 import Configurations from './Configurations';
 
 const Blessings = () => {
-  const [allBlessings, setAllBlessings] = useState(sampleData);
+  // const [allBlessings, setAllBlessings] = useState(sampleData);
+  const { data: allBlessings, setData: setAllBlessings } = useContext(UserContext);
   const [currentMonth, setCurrentMonth] = useState(new Date().getMonth());
   const [currentYear, setCurrentYear] = useState(new Date().getFullYear());
   const allData = useMemo(
@@ -16,7 +17,7 @@ const Blessings = () => {
       allBlessings.filter(
         (blessing) => blessing.month === currentMonth && blessing.year === currentYear
       ),
-    [currentMonth, currentYear]
+    [allBlessings, currentMonth, currentYear]
   );
 
   const handleDateChange = (actionType: 'current' | 'next' | 'prev') => {

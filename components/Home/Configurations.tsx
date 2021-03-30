@@ -12,11 +12,12 @@ import {
   useColorMode,
   VStack,
 } from '@chakra-ui/react';
-import { Dispatch, memo, SetStateAction, useState } from 'react';
+import { Dispatch, memo, SetStateAction, useContext, useState } from 'react';
 import { FaCodeBranch, FaBookOpen, FaBarcode, FaMoon } from 'react-icons/fa';
 import BackupModal from '../BackupModal';
 import { Data } from '../../types/Data';
 import AdditionModal from '../AdditionModal';
+import UserContext from '../../utils/config';
 
 type Props = {
   data: Data[];
@@ -27,6 +28,7 @@ const Configurations = ({ data, setData }: Props) => {
   const { colorMode, toggleColorMode } = useColorMode();
   const [openAdditionModal, setOpenAdditionModal] = useState(false);
   const [openBackupModal, setOpenBackupModal] = useState(false);
+  const { name, setName } = useContext(UserContext);
 
   return (
     <>
@@ -55,7 +57,7 @@ const Configurations = ({ data, setData }: Props) => {
           <HStack spacing={4}>
             <Icon as={FaBarcode} boxSize={5} />
             <Text fontSize="lg">Your name</Text>
-            <Editable defaultValue="Nicholas" fontSize="lg">
+            <Editable value={name} fontSize="lg" onChange={(value) => setName(value)}>
               <EditablePreview />
               <EditableInput />
             </Editable>
