@@ -19,13 +19,13 @@ export type Data = {
  */
 export type Configuration = {
   name: string;
+  data: Data[];
 };
 
 /**
- * Union of both types to represent the application's local storage.
+ * Union of both types to represent the React Context.
  */
 type LocalStorageDataStore = Configuration & {
-  data: Data[];
   setName: Dispatch<SetStateAction<string>>;
   setData: Dispatch<SetStateAction<Data[]>>;
 };

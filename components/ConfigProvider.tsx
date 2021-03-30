@@ -1,13 +1,13 @@
 import { memo, ReactNode, useEffect, useMemo, useState } from 'react';
-import { Data } from '../types/Data';
 import UserContext from '../utils/config';
+import { defaultConfigurations } from '../utils/constants';
 
 /**
  * Provider function to help provide the values for the context.
  */
 const ConfigProvider = ({ children }: { children: ReactNode }) => {
-  const [data, setData] = useState([] as Data[]);
-  const [name, setName] = useState('Dreamer');
+  const [data, setData] = useState(defaultConfigurations.data);
+  const [name, setName] = useState(defaultConfigurations.name);
 
   /**
    * First things first, when first time loading a component, load the data.
@@ -16,8 +16,8 @@ const ConfigProvider = ({ children }: { children: ReactNode }) => {
     const localStorageData = localStorage.getItem('data');
     const localStorageName = localStorage.getItem('name');
 
-    setData(localStorageData !== null ? JSON.parse(localStorageData) : []);
-    setName(localStorageName !== null ? localStorageName : 'Dreamer');
+    setData(localStorageData ? JSON.parse(localStorageData) : data);
+    setName(localStorageName ? localStorageName : name);
   }, []);
 
   /**

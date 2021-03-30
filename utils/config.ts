@@ -1,12 +1,13 @@
 import { createContext } from 'react';
 import LocalStorageDataStore from '../types/Data';
+import { defaultConfigurations } from './constants';
 
 /**
  * Default state for the context.
  */
 export const defaultState: LocalStorageDataStore = {
-  name: 'Dreamer',
-  data: [],
+  name: defaultConfigurations.name,
+  data: defaultConfigurations.data,
   setName: () => {},
   setData: () => {},
 };
