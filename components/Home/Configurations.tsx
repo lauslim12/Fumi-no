@@ -12,39 +12,23 @@ import {
   useColorMode,
   VStack,
 } from '@chakra-ui/react';
-import { Dispatch, memo, SetStateAction, useContext, useState } from 'react';
+import { memo, useContext, useState } from 'react';
 import { FaCodeBranch, FaBookOpen, FaBarcode, FaMoon } from 'react-icons/fa';
 import BackupModal from '../BackupModal';
-import { Data } from '../../types/Data';
 import AdditionModal from '../AdditionModal';
 import UserContext from '../../utils/config';
 
-type Props = {
-  data: Data[];
-  setData: Dispatch<SetStateAction<Data[]>>;
-};
-
-const Configurations = ({ data, setData }: Props) => {
+const Configurations = () => {
   const { colorMode, toggleColorMode } = useColorMode();
+  const { name, setName } = useContext(UserContext);
   const [openAdditionModal, setOpenAdditionModal] = useState(false);
   const [openBackupModal, setOpenBackupModal] = useState(false);
-  const { name, setName } = useContext(UserContext);
 
   return (
     <>
-      <AdditionModal
-        open={openAdditionModal}
-        setOpen={setOpenAdditionModal}
-        data={data}
-        setData={setData}
-      />
+      <AdditionModal open={openAdditionModal} setOpen={setOpenAdditionModal} />
 
-      <BackupModal
-        open={openBackupModal}
-        setOpen={setOpenBackupModal}
-        data={JSON.stringify(data, null, 2)}
-        setData={setData}
-      />
+      <BackupModal open={openBackupModal} setOpen={setOpenBackupModal} />
 
       <VStack align="start" spacing={4} px={2}>
         <Flex align={['center', 'flex-start']} justify={['center', 'flex-start']} w="full" mt={10}>

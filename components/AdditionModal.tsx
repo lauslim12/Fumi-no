@@ -14,19 +14,19 @@ import {
   useToast,
   VStack,
 } from '@chakra-ui/react';
-import { Dispatch, FormEvent, memo, SetStateAction, useState } from 'react';
+import { Dispatch, FormEvent, memo, SetStateAction, useContext, useState } from 'react';
 import { Data } from '../types/Data';
 import { Colors, Days, Months } from '../types/Enums';
+import UserContext from '../utils/config';
 import AdditionForm from './AdditionForm';
 
 type Props = {
   open: boolean;
   setOpen: Dispatch<SetStateAction<boolean>>;
-  data: Data[];
-  setData: Dispatch<SetStateAction<Data[]>>;
 };
 
-const AdditionModal = ({ open, setOpen, data, setData }: Props) => {
+const AdditionModal = ({ open, setOpen }: Props) => {
+  const { setData } = useContext(UserContext);
   const [blessing, setBlessing] = useState('');
   const [color, setColor] = useState('red' as Colors);
   const toast = useToast();

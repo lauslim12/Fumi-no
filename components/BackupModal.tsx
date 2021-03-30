@@ -16,21 +16,25 @@ import {
   useToast,
   VStack,
 } from '@chakra-ui/react';
-import { Dispatch, memo, SetStateAction, useState } from 'react';
-import { Data } from '../types/Data';
+import { Dispatch, memo, SetStateAction, useContext, useEffect, useMemo, useState } from 'react';
+import UserContext from '../utils/config';
 import { jsonValidate } from '../utils/json';
 
 type Props = {
   open: boolean;
   setOpen: Dispatch<SetStateAction<boolean>>;
-  data: string;
-  setData: Dispatch<SetStateAction<Data[]>>;
 };
 
-const BackupModal = ({ open, setOpen, data, setData }: Props) => {
-  const { hasCopied, onCopy } = useClipboard(data);
-  const [textData, setTextData] = useState(data);
+const BackupModal = ({ open, setOpen }: Props) => {
+  const { data, setData } = useContext(UserContext);
+  const stringifiedData = useMemo(() => JSON.stringify(data, null, 2), [data]);
+  const { hasCopied, onCopy } = useClipboard(stringifiedData);
+  const [textData, setTextData] = useState('');
   const toast = useToast();
+
+  useEffect(() => {
+    setTextData(() => JSON.stringify(data, null, 2));
+  }, [data]);
 
   const overwriteData = () => {
     const isDataValid = jsonValidate(textData);

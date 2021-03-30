@@ -1,6 +1,7 @@
 import { memo } from 'react';
 import ConfigProvider from '../components/ConfigProvider';
 import Blessings from '../components/Home/Blessings';
+import Configurations from '../components/Home/Configurations';
 import Fumino from '../components/Home/Fumino';
 import Greetings from '../components/Home/Greetings';
 import Luck from '../components/Home/Luck';
@@ -12,6 +13,7 @@ const Home = () => (
       <Fumino />
       <Greetings />
       <Blessings />
+      <Configurations />
       <Luck />
     </Layout>
   </ConfigProvider>
