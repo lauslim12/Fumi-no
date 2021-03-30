@@ -1,8 +1,9 @@
-import { chakra, Flex } from '@chakra-ui/react';
+import { chakra, Flex, Spacer } from '@chakra-ui/react';
 import { GoogleFonts } from 'next-google-fonts';
 import Head from 'next/head';
 import { memo } from 'react';
 import { ReactNode } from 'react';
+import Footer from './Footer';
 
 type Props = {
   children: ReactNode;
@@ -20,8 +21,12 @@ const Layout = ({ children, title }: Props) => (
       <title>{[...title.map((x) => x?.trim()).filter((x) => x), 'Fumino'].join(' · ')}</title>
     </Head>
 
-    <Flex minH="100vh" direction="column" maxW="1400px" mx="auto">
+    <Flex minH="100vh" direction="column" maxW="1200px" mx="auto">
       <chakra.div p={4}>{children}</chakra.div>
+
+      <Spacer />
+
+      <Footer />
     </Flex>
   </>
 );
