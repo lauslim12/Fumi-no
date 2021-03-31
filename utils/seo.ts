@@ -1,6 +1,6 @@
 const pageTitles = {
   main: 'Fumino',
-  front: 'Fumino - Home',
+  home: 'Fumino - Home',
   motivation: 'Fumino - Motivation',
 };
 
@@ -25,12 +25,12 @@ export const SEO = {
   },
 };
 
-export const frontSEO = {
+export const homeSEO = {
   ...SEO,
-  title: pageTitles.front,
+  title: pageTitles.home,
   openGraph: {
     ...SEO.openGraph,
-    title: pageTitles.front,
+    title: pageTitles.home,
     url: 'https://fumi-no.com/',
   },
 };
