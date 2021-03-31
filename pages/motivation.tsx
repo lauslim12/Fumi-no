@@ -1,5 +1,5 @@
 import { memo } from 'react';
-import Luck from '../components/Home/Luck';
+import Luck from '../components/Motivation/Luck';
 import Layout from '../components/Layout';
 
 const Motivation = () => (

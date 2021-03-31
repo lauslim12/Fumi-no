@@ -1,8 +1,8 @@
 import { memo } from 'react';
 import ConfigProvider from '../components/ConfigProvider';
-import Blessings from '../components/Home/Blessings';
-import Configurations from '../components/Home/Configurations';
-import Greetings from '../components/Home/Greetings';
+import Blessings from '../components/Main/Blessings';
+import Configurations from '../components/Main/Configurations';
+import Greetings from '../components/Main/Greetings';
 import Layout from '../components/Layout';
 
 const Main = () => (
