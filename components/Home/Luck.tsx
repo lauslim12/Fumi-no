@@ -11,6 +11,7 @@ const Luck = () => (
 
       <Text as="h2">Life is too short to be worrying about something you cannot control.</Text>
       <Text as="h2">Remember that you have survived 100% of your bad days!</Text>
+      <Text as="h3">Come back tommorow for another quote of the day!</Text>
 
       <Quotes />
     </VStack>
