@@ -1,6 +1,6 @@
 const pageTitles = {
   main: 'Fumino',
-  front: 'Fumino - Front Page',
+  front: 'Fumino - Home',
   motivation: 'Fumino - Motivation',
 };
 
@@ -12,7 +12,7 @@ export const SEO = {
     description: 'Fumino is an open-source, web version of Happiness Jar! No registration needed!',
     type: 'website',
     locale: 'en_US',
-    url: 'https://fumi-no.com/home',
+    url: 'https://fumi-no.com/main',
     site_name: 'Fumino',
     images: [
       {
