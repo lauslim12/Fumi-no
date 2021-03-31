@@ -4,6 +4,7 @@ import Head from 'next/head';
 import { memo } from 'react';
 import { ReactNode } from 'react';
 import Footer from './Footer';
+import Header from './Header';
 
 type Props = {
   children: ReactNode;
@@ -27,8 +28,9 @@ const Layout = ({ children, title }: Props) => (
     </Head>
 
     <Flex minH="100vh" direction="column" maxW="1200px" mx="auto">
-      <chakra.div p={4}>{children}</chakra.div>
+      <Header />
 
+      <chakra.div p={4}>{children}</chakra.div>
       <Spacer />
 
       <Footer />
