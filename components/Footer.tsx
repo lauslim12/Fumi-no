@@ -5,8 +5,7 @@ import { FaGithub, FaHeart, FaLinkedin, FaStackOverflow } from 'react-icons/fa';
 const Footer = () => (
   <VStack as="footer" align="stretch" p={3} spacing={1} color="gray.500">
     <chakra.div fontSize="xs" textAlign="center">
-      <Text>Fumino is an open source web application that acts as your Happiness Jar.</Text>
-      <Text>Happiness Jar idea by Elizabeth Gilbert.</Text>
+      <Text>Fumino - OSS for your happiness.</Text>
       <Text>{`Copyright © ${new Date().getFullYear()} — Nicholas Dwiarto W.`}</Text>
     </chakra.div>
 
