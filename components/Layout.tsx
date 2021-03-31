@@ -1,4 +1,4 @@
-import { chakra, Flex, Spacer } from '@chakra-ui/react';
+import { chakra, Flex, VStack } from '@chakra-ui/react';
 import { GoogleFonts } from 'next-google-fonts';
 import Head from 'next/head';
 import { memo } from 'react';
@@ -9,9 +9,10 @@ import Header from './Header';
 type Props = {
   children: ReactNode;
   title: string[];
+  isFullPage?: boolean;
 };
 
-const Layout = ({ children, title }: Props) => (
+const Layout = ({ children, title, isFullPage = false }: Props) => (
   <>
     <GoogleFonts href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" />
     <GoogleFonts href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" />
@@ -30,8 +31,17 @@ const Layout = ({ children, title }: Props) => (
     <Flex minH="100vh" direction="column" maxW="1200px" mx="auto">
       <Header />
 
-      <chakra.div p={4}>{children}</chakra.div>
-      <Spacer />
+      {isFullPage ? (
+        <chakra.div p={4} flex={1} display="flex">
+          <VStack spacing={4} flex={1} justify="center" textAlign="center">
+            {children}
+          </VStack>
+        </chakra.div>
+      ) : (
+        <chakra.div p={4} flex={1}>
+          {children}
+        </chakra.div>
+      )}
 
       <Footer />
     </Flex>
