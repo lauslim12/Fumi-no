@@ -18,6 +18,8 @@ const Layout = ({ children, title }: Props) => (
     <Head>
       <meta charSet="UTF-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+      <link rel="icon" href="./favicon.png" type="image/png" />
       <title>{[...title.map((x) => x?.trim()).filter((x) => x), 'Fumino'].join(' · ')}</title>
     </Head>
 
