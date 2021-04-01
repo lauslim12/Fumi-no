@@ -1,6 +1,7 @@
 {
   "name": "fumi-no",
   "version": "0.0.0",
+  "description": "Fumino - OSS for your happiness",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -8,6 +9,16 @@
     "start": "next start",
     "type-check": "tsc --noEmit"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lauslim12/Fumi-no.git"
+  },
+  "author": "Nicholas Dwiarto <nicholasdwiarto@yahoo.com> (https://nicholasdw.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lauslim12/Fumi-no/issues"
+  },
+  "homepage": "https://fumi-no.com",
   "dependencies": {
     "@chakra-ui/react": "^1.4.1",
     "@emotion/react": "^11.1.5",
