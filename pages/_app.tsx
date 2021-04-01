@@ -1,5 +1,6 @@
 import 'focus-visible/dist/focus-visible';
 import '../styles/NProgress.scss';
+import '../styles/Selection.scss';
 
 import { ChakraProvider, extendTheme } from '@chakra-ui/react';
 import { AppProps } from 'next/app';
