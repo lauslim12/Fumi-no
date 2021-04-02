@@ -152,7 +152,7 @@ const AdditionForm = ({
             {radioValues.map((value) => (
               <WrapItem key={value}>
                 <Radio id={value} value={value} colorScheme="red">
-                  <Box bg={`${value}.300`} p={1} borderRadius="md">
+                  <Box bg={`${value}.300`} p={1} borderRadius="md" color="black">
                     {value}
                   </Box>
                 </Radio>
