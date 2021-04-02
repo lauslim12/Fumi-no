@@ -54,9 +54,11 @@ const AdditionForm = ({
   const checkboxHandler = () => {
     if (!isToday) {
       const currentDate = new Date();
+
       setDay(currentDate.getDate());
       setMonth(currentDate.getMonth());
       setYear(currentDate.getFullYear());
+
       return setIsToday(true);
     }
 

@@ -49,7 +49,7 @@ const EditModal = ({ open, setOpen, currentData }: Props) => {
     const indexOfData = data.findIndex((blessing) => blessing.id === currentData.id);
     const newState = [...data.slice(0, indexOfData), newData, ...data.slice(indexOfData + 1)];
 
-    setData(() => newState);
+    setData(newState);
     setOpen(false);
 
     toast({
@@ -67,7 +67,7 @@ const EditModal = ({ open, setOpen, currentData }: Props) => {
     const indexOfData = data.findIndex((blessing) => blessing.id === currentData.id);
     const newState = [...data.slice(0, indexOfData), ...data.slice(indexOfData + 1)];
 
-    setData(() => newState);
+    setData(newState);
     setOpen(false);
 
     toast({

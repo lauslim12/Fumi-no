@@ -24,7 +24,7 @@ const Blessings = () => {
 
       if (currentMonth === 0) {
         setCurrentYear((prevState) => prevState - 1);
-        setCurrentMonth(() => 11);
+        setCurrentMonth(11);
       }
 
       return;
@@ -35,14 +35,14 @@ const Blessings = () => {
 
       if (currentMonth === 11) {
         setCurrentYear((prevState) => prevState + 1);
-        setCurrentMonth(() => 0);
+        setCurrentMonth(0);
       }
 
       return;
     }
 
-    setCurrentYear(() => new Date().getFullYear());
-    setCurrentMonth(() => new Date().getMonth());
+    setCurrentYear(new Date().getFullYear());
+    setCurrentMonth(new Date().getMonth());
   };
 
   return (

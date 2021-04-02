@@ -33,7 +33,7 @@ const BackupModal = ({ open, setOpen }: Props) => {
   const toast = useToast();
 
   useEffect(() => {
-    setTextData(() => JSON.stringify(data, null, 2));
+    setTextData(JSON.stringify(data, null, 2));
   }, [data]);
 
   const overwriteData = () => {
@@ -49,7 +49,7 @@ const BackupModal = ({ open, setOpen }: Props) => {
       });
     }
 
-    setData(() => JSON.parse(textData));
+    setData(JSON.parse(textData));
     setOpen(false);
 
     toast({
