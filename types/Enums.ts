@@ -1,4 +1,16 @@
-export type Colors = 'red' | 'green' | 'blue' | 'yellow' | 'transparent';
+export type Colors =
+  | 'red'
+  | 'green'
+  | 'blue'
+  | 'yellow'
+  | 'transparent'
+  | 'orange'
+  | 'teal'
+  | 'cyan'
+  | 'purple'
+  | 'pink'
+  | 'gray';
+
 export type Days =
   | 1
   | 2
@@ -31,4 +43,5 @@ export type Days =
   | 29
   | 30
   | 31;
+
 export type Months = 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11;

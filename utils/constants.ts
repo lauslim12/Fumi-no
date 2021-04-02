@@ -7,4 +7,16 @@ export const defaultConfigurations: Configuration = {
   customDateWidget: 'false',
 };
 
-export const radioValues: Colors[] = ['red', 'green', 'blue', 'yellow', 'transparent'];
+export const radioValues: Colors[] = [
+  'red',
+  'green',
+  'blue',
+  'yellow',
+  'orange',
+  'teal',
+  'cyan',
+  'purple',
+  'pink',
+  'gray',
+  'transparent',
+];
