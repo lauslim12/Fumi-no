@@ -20,7 +20,7 @@ import UserContext from '../../utils/config';
 
 const Configurations = () => {
   const { colorMode, toggleColorMode } = useColorMode();
-  const { name, setName, isNotTodayHidden, setIsNotTodayHidden } = useContext(UserContext);
+  const { name, setName, customDateWidget, setCustomDateWidget } = useContext(UserContext);
   const [openAdditionModal, setOpenAdditionModal] = useState(false);
   const [openBackupModal, setOpenBackupModal] = useState(false);
 
@@ -62,10 +62,11 @@ const Configurations = () => {
             <Text fontSize="lg">Hidden date settings</Text>
             <Switch
               colorScheme="green"
-              isChecked={!JSON.parse(isNotTodayHidden) as boolean}
+              isChecked={!JSON.parse(customDateWidget) as boolean}
               onChange={() => {
-                if (isNotTodayHidden === 'true') return setIsNotTodayHidden('false');
-                return setIsNotTodayHidden('true');
+                if (customDateWidget === 'true') return setCustomDateWidget('false');
+
+                return setCustomDateWidget('true');
               }}
             />
           </HStack>

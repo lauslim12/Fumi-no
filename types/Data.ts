@@ -21,7 +21,7 @@ export type Data = {
 export type Configuration = {
   name: string;
   data: Data[];
-  isNotTodayHidden: 'true' | 'false';
+  customDateWidget: 'true' | 'false';
 };
 
 /**
@@ -30,7 +30,7 @@ export type Configuration = {
 type LocalStorageDataStore = Configuration & {
   setName: Dispatch<SetStateAction<string>>;
   setData: Dispatch<SetStateAction<Data[]>>;
-  setIsNotTodayHidden: Dispatch<SetStateAction<'true' | 'false'>>;
+  setCustomDateWidget: Dispatch<SetStateAction<'true' | 'false'>>;
 };
 
 export default LocalStorageDataStore;

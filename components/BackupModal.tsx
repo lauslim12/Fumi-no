@@ -77,7 +77,7 @@ const BackupModal = ({ open, setOpen }: Props) => {
 
             <chakra.div>
               <chakra.p>You can export your account data for backup and restore.</chakra.p>
-              <chakra.p as="strong" fontWeight="bold">
+              <chakra.p as="strong" fontWeight="700">
                 This action cannot be undone.
               </chakra.p>
             </chakra.div>

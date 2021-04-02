@@ -49,7 +49,7 @@ const AdditionForm = ({
   setYear,
 }: Props) => {
   const [isToday, setIsToday] = useState(true);
-  const { isNotTodayHidden } = useContext(UserContext);
+  const { customDateWidget } = useContext(UserContext);
 
   const checkboxHandler = () => {
     if (!isToday) {
@@ -65,7 +65,7 @@ const AdditionForm = ({
 
   return (
     <VStack spacing={4}>
-      {JSON.parse(isNotTodayHidden) ? (
+      {(JSON.parse(customDateWidget) as boolean) ? (
         <>
           <FormControl id="day" isRequired isDisabled={isToday}>
             <FormLabel>Day of the good thing.</FormLabel>

@@ -8,7 +8,7 @@ import { defaultConfigurations } from '../utils/constants';
 const ConfigProvider = ({ children }: { children: ReactNode }) => {
   const [data, setData] = useState(defaultConfigurations.data);
   const [name, setName] = useState(defaultConfigurations.name);
-  const [isNotTodayHidden, setIsNotTodayHidden] = useState(defaultConfigurations.isNotTodayHidden);
+  const [customDateWidget, setCustomDateWidget] = useState(defaultConfigurations.customDateWidget);
 
   /**
    * First things first, when first time loading a component, load the data.
@@ -16,12 +16,12 @@ const ConfigProvider = ({ children }: { children: ReactNode }) => {
   useEffect(() => {
     const localStorageData = localStorage.getItem('data');
     const localStorageName = localStorage.getItem('name');
-    const localStorageHidden = localStorage.getItem('isNotTodayHidden');
+    const localStorageHidden = localStorage.getItem('customDateWidget');
 
     setData(localStorageData ? JSON.parse(localStorageData) : data);
     setName(localStorageName ? localStorageName : name);
-    setIsNotTodayHidden(
-      localStorageHidden ? (localStorageHidden as 'true' | 'false') : isNotTodayHidden
+    setCustomDateWidget(
+      localStorageData ? (localStorageHidden as 'true' | 'false') : customDateWidget
     );
   }, []);
 
@@ -43,8 +43,8 @@ const ConfigProvider = ({ children }: { children: ReactNode }) => {
    * Save the state of the 'hidden'.
    */
   useEffect(() => {
-    localStorage.setItem('isNotTodayHidden', isNotTodayHidden);
-  }, [isNotTodayHidden]);
+    localStorage.setItem('customDateWidget', customDateWidget);
+  }, [customDateWidget]);
 
   /**
    * Memoize values to prevent unnecessary re-renders.
@@ -55,10 +55,10 @@ const ConfigProvider = ({ children }: { children: ReactNode }) => {
       setData,
       name,
       setName,
-      isNotTodayHidden,
-      setIsNotTodayHidden,
+      customDateWidget,
+      setCustomDateWidget,
     }),
-    [data, setData, name, setName, isNotTodayHidden, setIsNotTodayHidden]
+    [data, setData, name, setName, customDateWidget, setCustomDateWidget]
   );
 
   /**
