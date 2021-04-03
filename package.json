@@ -9,7 +9,8 @@
     "start": "next start",
     "type-check": "tsc --noEmit",
     "check-updates": "npx ncu",
-    "update-deps": "npx ncu -u"
+    "update-deps": "npx ncu -u",
+    "deploy": "npx vercel --prod"
   },
   "repository": {
     "type": "git",
@@ -42,6 +43,7 @@
     "@types/nprogress": "^0.2.0",
     "@types/react": "^17.0.3",
     "npm-check-updates": "^11.3.0",
-    "typescript": "^4.2.3"
+    "typescript": "^4.2.3",
+    "vercel": "^21.3.3"
   }
 }
