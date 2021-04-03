@@ -14,8 +14,8 @@ import {
 } from '@chakra-ui/react';
 import { memo, useContext, useState } from 'react';
 import { FaCodeBranch, FaBookOpen, FaBarcode, FaMoon, FaTable } from 'react-icons/fa';
-import BackupModal from '../BackupModal';
-import AdditionModal from '../AdditionModal';
+import BackupModal from '../Modal/BackupModal';
+import AdditionModal from '../Modal/AdditionModal';
 import UserContext from '../../utils/config';
 
 const Configurations = () => {

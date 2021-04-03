@@ -15,64 +15,50 @@ import {
   VStack,
 } from '@chakra-ui/react';
 import { Dispatch, FormEvent, memo, SetStateAction, useContext, useState } from 'react';
-import { Data } from '../types/Data';
-import { Colors, Days, Months } from '../types/Enums';
-import UserContext from '../utils/config';
-import AdditionForm from './AdditionForm';
+import { IoClose, IoPencil } from 'react-icons/io5';
+import { Data } from '../../types/Data';
+import { Colors, Days, Months } from '../../types/Enums';
+import UserContext from '../../utils/config';
+import InputForm from './InputForm';
 
 type Props = {
   open: boolean;
   setOpen: Dispatch<SetStateAction<boolean>>;
-  currentData: Data;
 };
 
-const EditModal = ({ open, setOpen, currentData }: Props) => {
-  const { data, setData } = useContext(UserContext);
-  const [blessing, setBlessing] = useState(currentData.blessing);
-  const [color, setColor] = useState(currentData.color);
-  const [day, setDay] = useState(currentData.day as number);
-  const [month, setMonth] = useState(currentData.month as number);
-  const [year, setYear] = useState(currentData.year);
+const AdditionModal = ({ open, setOpen }: Props) => {
+  const { setData } = useContext(UserContext);
+  const [blessing, setBlessing] = useState('');
+  const [color, setColor] = useState('red' as Colors);
+  const [day, setDay] = useState(new Date().getDate());
+  const [month, setMonth] = useState(new Date().getMonth());
+  const [year, setYear] = useState(new Date().getFullYear());
   const toast = useToast();
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
 
+    const currentDate = new Date();
     const newData: Data = {
-      id: currentData.id,
+      id: `${currentDate.getMonth()}-${currentDate.getFullYear()}-${color}-${currentDate.getTime()}`,
       blessing,
       color,
       day: day as Days,
       month: month as Months,
       year: year,
     };
-    const indexOfData = data.findIndex((blessing) => blessing.id === currentData.id);
-    const newState = [...data.slice(0, indexOfData), newData, ...data.slice(indexOfData + 1)];
 
-    setData(newState);
+    setData((prevData) => [...prevData, newData]);
     setOpen(false);
+    setBlessing('');
+    setColor('red');
+    setDay(new Date().getDate());
+    setMonth(new Date().getMonth());
+    setYear(new Date().getFullYear());
 
     toast({
-      title: 'Data edited!',
-      description: 'Your current data has been edited!',
-      status: 'success',
-      isClosable: true,
-      duration: 5000,
-    });
-  };
-
-  const handleDelete = (e: FormEvent) => {
-    e.preventDefault();
-
-    const indexOfData = data.findIndex((blessing) => blessing.id === currentData.id);
-    const newState = [...data.slice(0, indexOfData), ...data.slice(indexOfData + 1)];
-
-    setData(newState);
-    setOpen(false);
-
-    toast({
-      title: 'Data deleted!',
-      description: 'Your current data has been deleted!',
+      title: 'Data added!',
+      description: 'Your data has been added!',
       status: 'success',
       isClosable: true,
       duration: 5000,
@@ -83,7 +69,7 @@ const EditModal = ({ open, setOpen, currentData }: Props) => {
     <Modal isOpen={open} onClose={() => setOpen(false)} size="lg">
       <ModalOverlay />
       <ModalContent as="form" onSubmit={handleSubmit}>
-        <ModalHeader>Edit Data</ModalHeader>
+        <ModalHeader>Add Data</ModalHeader>
         <ModalCloseButton />
 
         <ModalBody>
@@ -95,10 +81,10 @@ const EditModal = ({ open, setOpen, currentData }: Props) => {
             </Alert>
 
             <chakra.div>
-              <chakra.p>Edit your data here!</chakra.p>
+              <chakra.p>Input your data here!</chakra.p>
             </chakra.div>
 
-            <AdditionForm
+            <InputForm
               blessing={blessing}
               color={color}
               day={day}
@@ -115,13 +101,10 @@ const EditModal = ({ open, setOpen, currentData }: Props) => {
 
         <ModalFooter>
           <ButtonGroup>
-            <Button colorScheme="green" type="submit">
-              Edit Data
+            <Button colorScheme="green" type="submit" leftIcon={<IoPencil />}>
+              Add Data
             </Button>
-            <Button colorScheme="red" onClick={handleDelete}>
-              Delete Data
-            </Button>
-            <Button colorScheme="blue" onClick={() => setOpen(false)}>
+            <Button colorScheme="blue" onClick={() => setOpen(false)} leftIcon={<IoClose />}>
               Close
             </Button>
           </ButtonGroup>
@@ -131,4 +114,4 @@ const EditModal = ({ open, setOpen, currentData }: Props) => {
   );
 };
 
-export default memo(EditModal);
+export default memo(AdditionModal);

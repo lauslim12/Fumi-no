@@ -18,8 +18,8 @@ import {
 } from '@chakra-ui/react';
 import { Dispatch, memo, SetStateAction, useContext, useEffect, useMemo, useState } from 'react';
 import { IoBagCheck, IoClipboard, IoClose, IoPencil } from 'react-icons/io5';
-import UserContext from '../utils/config';
-import { jsonValidate } from '../utils/json';
+import UserContext from '../../utils/config';
+import { jsonValidate } from '../../utils/json';
 
 type Props = {
   open: boolean;

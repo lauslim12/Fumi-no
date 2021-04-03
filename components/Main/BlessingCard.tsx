@@ -3,7 +3,7 @@ import { Divider, Heading, Spacer, Text, VStack } from '@chakra-ui/layout';
 import { memo, useState } from 'react';
 import { Data } from '../../types/Data';
 import { numberToDay, numberToMonth } from '../../utils/date';
-import EditModal from '../EditModal';
+import EditModal from '../Modal/EditModal';
 
 type Props = {
   data: Data;
