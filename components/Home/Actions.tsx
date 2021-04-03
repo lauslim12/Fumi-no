@@ -14,17 +14,17 @@ const Actions = () => {
       <GuideModal open={open} setOpen={setOpen} />
 
       <Stack direction={['column', 'column', 'row']} spacing={3}>
-        <NextLink as={routes.main.path} href={routes.main.path} passHref>
-          <Tooltip
-            label="Get started now!"
-            aria-label="Tooltip that tells to get started now"
-            hasArrow
-          >
-            <Button colorScheme="green" leftIcon={<FaRocket />}>
+        <Tooltip
+          label="Get started now!"
+          aria-label="Tooltip that tells to get started now"
+          hasArrow
+        >
+          <Button colorScheme="green" leftIcon={<FaRocket />}>
+            <NextLink as={routes.main.path} href={routes.main.path} passHref>
               Get started
-            </Button>
-          </Tooltip>
-        </NextLink>
+            </NextLink>
+          </Button>
+        </Tooltip>
 
         <Tooltip
           label="Learn how to use this!"
