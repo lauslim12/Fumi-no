@@ -1,4 +1,4 @@
-import { Button, Stack, useColorMode } from '@chakra-ui/react';
+import { Button, Stack, Tooltip, useColorMode } from '@chakra-ui/react';
 import NextLink from 'next/link';
 import { memo, useState } from 'react';
 import { FaMoon, FaQuestion, FaRocket } from 'react-icons/fa';
@@ -15,23 +15,41 @@ const Actions = () => {
 
       <Stack direction={['column', 'column', 'row']} spacing={3}>
         <NextLink as={routes.main.path} href={routes.main.path} passHref>
-          <Button colorScheme="green" leftIcon={<FaRocket />}>
-            Get started
-          </Button>
+          <Tooltip
+            label="Get started now!"
+            aria-label="Tooltip that tells to get started now"
+            hasArrow
+          >
+            <Button colorScheme="green" leftIcon={<FaRocket />}>
+              Get started
+            </Button>
+          </Tooltip>
         </NextLink>
 
-        <Button
-          colorScheme="linkedin"
-          leftIcon={<FaQuestion />}
-          variant="outline"
-          onClick={() => setOpen(true)}
+        <Tooltip
+          label="Learn how to use this!"
+          aria-label="Tooltip that points to a button to spawn a popup"
+          hasArrow
         >
-          What is this?
-        </Button>
+          <Button
+            colorScheme="linkedin"
+            leftIcon={<FaQuestion />}
+            variant="outline"
+            onClick={() => setOpen(true)}
+          >
+            What is this?
+          </Button>
+        </Tooltip>
 
-        <Button colorScheme="orange" leftIcon={<FaMoon />} onClick={toggleColorMode}>
-          {colorMode === 'dark' ? 'Light mode' : 'Dark mode'}
-        </Button>
+        <Tooltip
+          label="Activate dark mode"
+          aria-label="Tooltip that points to a button to activate dark mode"
+          hasArrow
+        >
+          <Button colorScheme="orange" leftIcon={<FaMoon />} onClick={toggleColorMode}>
+            {colorMode === 'dark' ? 'Light mode' : 'Dark mode'}
+          </Button>
+        </Tooltip>
       </Stack>
     </>
   );
