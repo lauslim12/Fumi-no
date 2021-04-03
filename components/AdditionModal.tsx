@@ -15,6 +15,7 @@ import {
   VStack,
 } from '@chakra-ui/react';
 import { Dispatch, FormEvent, memo, SetStateAction, useContext, useState } from 'react';
+import { IoClose, IoPencil } from 'react-icons/io5';
 import { Data } from '../types/Data';
 import { Colors, Days, Months } from '../types/Enums';
 import UserContext from '../utils/config';
@@ -100,10 +101,10 @@ const AdditionModal = ({ open, setOpen }: Props) => {
 
         <ModalFooter>
           <ButtonGroup>
-            <Button colorScheme="green" type="submit">
+            <Button colorScheme="green" type="submit" leftIcon={<IoPencil />}>
               Add Data
             </Button>
-            <Button colorScheme="blue" onClick={() => setOpen(false)}>
+            <Button colorScheme="blue" onClick={() => setOpen(false)} leftIcon={<IoClose />}>
               Close
             </Button>
           </ButtonGroup>

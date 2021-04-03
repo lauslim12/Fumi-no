@@ -17,6 +17,7 @@ import {
   VStack,
 } from '@chakra-ui/react';
 import { Dispatch, memo, SetStateAction, useContext, useEffect, useMemo, useState } from 'react';
+import { IoBagCheck, IoClipboard, IoClose, IoPencil } from 'react-icons/io5';
 import UserContext from '../utils/config';
 import { jsonValidate } from '../utils/json';
 
@@ -94,13 +95,17 @@ const BackupModal = ({ open, setOpen }: Props) => {
 
         <ModalFooter>
           <ButtonGroup>
-            <Button colorScheme="red" onClick={() => overwriteData()}>
+            <Button colorScheme="red" onClick={() => overwriteData()} leftIcon={<IoPencil />}>
               Overwrite
             </Button>
-            <Button colorScheme="green" onClick={onCopy}>
+            <Button
+              colorScheme="green"
+              onClick={onCopy}
+              leftIcon={hasCopied ? <IoBagCheck /> : <IoClipboard />}
+            >
               {hasCopied ? 'Copied!' : 'Copy'}
             </Button>
-            <Button colorScheme="blue" onClick={() => setOpen(false)}>
+            <Button colorScheme="blue" onClick={() => setOpen(false)} leftIcon={<IoClose />}>
               Close
             </Button>
           </ButtonGroup>
