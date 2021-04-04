@@ -39,11 +39,7 @@ const reducer = (state: Configuration, action: Action): Configuration => {
 
     case 'editData':
       const index = data.findIndex((blessing) => blessing.id === action.payload.currentId);
-      const editedData = [
-        ...data.slice(0, index),
-        action.payload.data,
-        ...state.data.slice(index + 1),
-      ];
+      const editedData = [...data.slice(0, index), action.payload.data, ...data.slice(index + 1)];
       setLocalConfig('data', editedData);
 
       return {
