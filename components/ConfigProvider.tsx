@@ -1,10 +1,11 @@
 import { memo, ReactNode, useEffect, useMemo, useReducer } from 'react';
-import ConfigReducer from './ConfigReducer';
+import ConfigReducer from '../utils/reducer';
 import UserContext from '../utils/config';
 import { ConfigKeys, DefaultConfig } from '../utils/constants';
 
 /**
- * A helper function to get all data from the local storage, according to all of the possible keys.
+ * A helper function to get all data from the local storage.
+ * This function also maps them according to all of the possible keys.
  *
  * @returns A modified object according to the local storage.
  */

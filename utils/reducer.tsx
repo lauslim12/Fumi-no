@@ -1,5 +1,5 @@
 import { Action, Configuration } from '../types/Data';
-import { DefaultConfig } from '../utils/constants';
+import { DefaultConfig } from './constants';
 
 /**
  * Type to manage the 'setLocalConfig' function.
@@ -24,7 +24,7 @@ const setLocalConfig = (key: TKey, value: TValue) => {
  * @param action - Action that we want to perform.
  * @returns An updated state.
  */
-const ConfigReducer = (state: Configuration, action: Action): Configuration => {
+const reducer = (state: Configuration, action: Action): Configuration => {
   const { data } = state;
 
   switch (action.type) {
@@ -92,4 +92,4 @@ const ConfigReducer = (state: Configuration, action: Action): Configuration => {
   }
 };
 
-export default ConfigReducer;
+export default reducer;
