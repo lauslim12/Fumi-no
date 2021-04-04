@@ -62,12 +62,11 @@ const ConfigReducer = (state: Configuration, action: Action): Configuration => {
       };
 
     case 'overwriteData':
-      setLocalConfig('data', action.payload);
+      setLocalConfig('name', action.payload.name);
+      setLocalConfig('data', action.payload.data);
+      setLocalConfig('customDateWidget', action.payload.customDateWidget);
 
-      return {
-        ...state,
-        data: action.payload,
-      };
+      return action.payload;
 
     case 'editName':
       setLocalConfig('name', action.payload);

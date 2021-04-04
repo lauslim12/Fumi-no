@@ -28,14 +28,12 @@ type Props = {
 
 const BackupModal = ({ open, setOpen }: Props) => {
   const { state, dispatch } = useContext(UserContext);
-  const stringifiedData = useMemo(() => JSON.stringify(state.data, null, 2), [state.data]);
-  const { hasCopied, onCopy } = useClipboard(stringifiedData);
-  const [textData, setTextData] = useState('');
+  const stringifiedData = useMemo(() => JSON.stringify(state, null, 2), [state]);
+  const [textData, setTextData] = useState(stringifiedData);
+  const { hasCopied, onCopy } = useClipboard(textData);
   const toast = useToast();
 
-  useEffect(() => {
-    setTextData(JSON.stringify(state.data, null, 2));
-  }, [state.data]);
+  useEffect(() => setTextData(JSON.stringify(state, null, 2)), [state]);
 
   const overwriteData = () => {
     const isDataValid = jsonValidate(textData);

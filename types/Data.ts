@@ -61,7 +61,7 @@ type InitializeContextAction = {
 
 type OverwriteDataAction = {
   type: 'overwriteData';
-  payload: Data[];
+  payload: Configuration;
 };
 
 export type Action =
