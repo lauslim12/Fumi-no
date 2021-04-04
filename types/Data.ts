@@ -1,4 +1,3 @@
-import { Dispatch, SetStateAction } from 'react';
 import { Colors, Days, Months } from './Enums';
 
 /**
@@ -25,12 +24,51 @@ export type Configuration = {
 };
 
 /**
- * Union of both types to represent the React Context.
+ * Types for the reducer.
  */
-type LocalStorageDataStore = Configuration & {
-  setName: Dispatch<SetStateAction<string>>;
-  setData: Dispatch<SetStateAction<Data[]>>;
-  setCustomDateWidget: Dispatch<SetStateAction<'true' | 'false'>>;
+type AddDataAction = {
+  type: 'addData';
+  payload: Data;
 };
 
-export default LocalStorageDataStore;
+type DeleteDataAction = {
+  type: 'deleteData';
+  payload: string;
+};
+
+type EditCustomDateWidgetAction = {
+  type: 'editCustomDateWidget';
+  payload: 'true' | 'false';
+};
+
+type EditDataAction = {
+  type: 'editData';
+  payload: {
+    currentId: string;
+    data: Data;
+  };
+};
+
+type EditNameAction = {
+  type: 'editName';
+  payload: string;
+};
+
+type InitializeContextAction = {
+  type: 'initializeContext';
+  payload: Configuration;
+};
+
+type OverwriteDataAction = {
+  type: 'overwriteData';
+  payload: Data[];
+};
+
+export type Action =
+  | AddDataAction
+  | DeleteDataAction
+  | EditCustomDateWidgetAction
+  | EditDataAction
+  | EditNameAction
+  | InitializeContextAction
+  | OverwriteDataAction;
