@@ -3,7 +3,9 @@ import { memo, useContext } from 'react';
 import UserContext from '../../utils/config';
 
 const Greetings = () => {
-  const { name } = useContext(UserContext);
+  const {
+    state: { name },
+  } = useContext(UserContext);
 
   return (
     <VStack textAlign="center">

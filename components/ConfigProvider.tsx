@@ -1,69 +1,59 @@
-import { memo, ReactNode, useEffect, useMemo, useState } from 'react';
+import { memo, ReactNode, useEffect, useMemo, useReducer } from 'react';
+import ConfigReducer from './ConfigReducer';
 import UserContext from '../utils/config';
-import { DefaultConfig } from '../utils/constants';
+import { ConfigKeys, DefaultConfig } from '../utils/constants';
 
 /**
- * Provider function to help provide the values for the context.
+ * A helper function to get all data from the local storage, according to all of the possible keys.
+ *
+ * @returns A modified object according to the local storage.
+ */
+const getLocalConfig = () => {
+  const newObject = { ...DefaultConfig };
+
+  for (const key of ConfigKeys) {
+    const item = localStorage.getItem(key);
+
+    try {
+      newObject[key] = JSON.parse(item || '');
+    } catch {
+      // Ignored.
+    }
+  }
+
+  return newObject;
+};
+
+/**
+ * Provider function to help provide values for the context.
+ *
+ * @param children - ReactNode to be wrapped around the component.
+ * @returns React Context Provider
  */
 const ConfigProvider = ({ children }: { children: ReactNode }) => {
-  const [data, setData] = useState(DefaultConfig.data);
-  const [name, setName] = useState(DefaultConfig.name);
-  const [customDateWidget, setCustomDateWidget] = useState(DefaultConfig.customDateWidget);
+  const [state, dispatch] = useReducer(ConfigReducer, DefaultConfig);
 
   /**
-   * First things first, when first time loading a component, load the data.
+   * 1) When first time loading a component, load the data.
+   * 2) Dispatch all the gathered data to the React Context.
    */
   useEffect(() => {
-    const localStorageData = localStorage.getItem('data');
-    const localStorageName = localStorage.getItem('name');
-    const localStorageHidden = localStorage.getItem('customDateWidget');
+    const userData = getLocalConfig();
 
-    setData(localStorageData ? JSON.parse(localStorageData) : data);
-    setName(localStorageName ? localStorageName : name);
-    setCustomDateWidget(
-      localStorageData ? (localStorageHidden as 'true' | 'false') : customDateWidget
-    );
+    dispatch({ type: 'initializeContext', payload: userData });
   }, []);
-
-  /**
-   * Save the state of the 'name'.
-   */
-  useEffect(() => {
-    localStorage.setItem('name', name);
-  }, [name]);
-
-  /**
-   * Save the state of the 'data'.
-   */
-  useEffect(() => {
-    localStorage.setItem('data', JSON.stringify(data));
-  }, [data]);
-
-  /**
-   * Save the state of the 'hidden'.
-   */
-  useEffect(() => {
-    localStorage.setItem('customDateWidget', customDateWidget);
-  }, [customDateWidget]);
 
   /**
    * Memoize values to prevent unnecessary re-renders.
    */
   const value = useMemo(
     () => ({
-      data,
-      setData,
-      name,
-      setName,
-      customDateWidget,
-      setCustomDateWidget,
+      state,
+      dispatch,
     }),
-    [data, setData, name, setName, customDateWidget, setCustomDateWidget]
+    [state, dispatch]
   );
 
-  /**
-   * Return a new provider.
-   */
   return <UserContext.Provider value={value}>{children}</UserContext.Provider>;
 };
 

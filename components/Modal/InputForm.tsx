@@ -49,7 +49,9 @@ const AdditionForm = ({
   setYear,
 }: Props) => {
   const [isToday, setIsToday] = useState(true);
-  const { customDateWidget } = useContext(UserContext);
+  const {
+    state: { customDateWidget },
+  } = useContext(UserContext);
 
   const checkboxHandler = () => {
     if (!isToday) {

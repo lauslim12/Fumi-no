@@ -7,7 +7,9 @@ import CustomIconBtn from './CustomIconBtn';
 import BlessingCard from './BlessingCard';
 
 const Blessings = () => {
-  const { data: allBlessings } = useContext(UserContext);
+  const {
+    state: { data: allBlessings },
+  } = useContext(UserContext);
   const [currentMonth, setCurrentMonth] = useState(new Date().getMonth());
   const [currentYear, setCurrentYear] = useState(new Date().getFullYear());
   const allData = useMemo(

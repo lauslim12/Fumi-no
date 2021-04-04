@@ -20,7 +20,7 @@ import UserContext from '../../utils/config';
 
 const Configurations = () => {
   const { colorMode, toggleColorMode } = useColorMode();
-  const { name, setName, customDateWidget, setCustomDateWidget } = useContext(UserContext);
+  const { state, dispatch } = useContext(UserContext);
   const [openAdditionModal, setOpenAdditionModal] = useState(false);
   const [openBackupModal, setOpenBackupModal] = useState(false);
 
@@ -41,7 +41,11 @@ const Configurations = () => {
           <HStack spacing={4}>
             <Icon as={FaBarcode} boxSize={5} />
             <Text fontSize="lg">Your name</Text>
-            <Editable value={name} fontSize="lg" onChange={(value) => setName(value)}>
+            <Editable
+              value={state.name}
+              fontSize="lg"
+              onChange={(value) => dispatch({ type: 'editName', payload: value })}
+            >
               <EditablePreview />
               <EditableInput />
             </Editable>
@@ -62,11 +66,13 @@ const Configurations = () => {
             <Text fontSize="lg">Hidden date settings</Text>
             <Switch
               colorScheme="green"
-              isChecked={!JSON.parse(customDateWidget) as boolean}
+              isChecked={!JSON.parse(state.customDateWidget) as boolean}
               onChange={() => {
-                if (customDateWidget === 'true') return setCustomDateWidget('false');
+                if (state.customDateWidget === 'true') {
+                  return dispatch({ type: 'editCustomDateWidget', payload: 'false' });
+                }
 
-                return setCustomDateWidget('true');
+                return dispatch({ type: 'editCustomDateWidget', payload: 'true' });
               }}
             />
           </HStack>
