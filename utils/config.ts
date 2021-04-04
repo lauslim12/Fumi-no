@@ -1,14 +1,14 @@
 import { createContext } from 'react';
 import LocalStorageDataStore from '../types/Data';
-import { defaultConfigurations } from './constants';
+import { DefaultConfig } from './constants';
 
 /**
  * Default state for the context.
  */
 export const defaultState: LocalStorageDataStore = {
-  name: defaultConfigurations.name,
-  data: defaultConfigurations.data,
-  customDateWidget: defaultConfigurations.customDateWidget,
+  name: DefaultConfig.name,
+  data: DefaultConfig.data,
+  customDateWidget: DefaultConfig.customDateWidget,
   setName: () => {},
   setData: () => {},
   setCustomDateWidget: () => {},

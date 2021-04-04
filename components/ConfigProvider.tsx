@@ -1,14 +1,14 @@
 import { memo, ReactNode, useEffect, useMemo, useState } from 'react';
 import UserContext from '../utils/config';
-import { defaultConfigurations } from '../utils/constants';
+import { DefaultConfig } from '../utils/constants';
 
 /**
  * Provider function to help provide the values for the context.
  */
 const ConfigProvider = ({ children }: { children: ReactNode }) => {
-  const [data, setData] = useState(defaultConfigurations.data);
-  const [name, setName] = useState(defaultConfigurations.name);
-  const [customDateWidget, setCustomDateWidget] = useState(defaultConfigurations.customDateWidget);
+  const [data, setData] = useState(DefaultConfig.data);
+  const [name, setName] = useState(DefaultConfig.name);
+  const [customDateWidget, setCustomDateWidget] = useState(DefaultConfig.customDateWidget);
 
   /**
    * First things first, when first time loading a component, load the data.
