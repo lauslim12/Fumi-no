@@ -17,6 +17,7 @@ import { FaCodeBranch, FaBookOpen, FaBarcode, FaMoon, FaTable } from 'react-icon
 import BackupModal from '../Modal/BackupModal';
 import AdditionModal from '../Modal/AdditionModal';
 import UserContext from '../../utils/config';
+import { isStringTrue } from '../../utils/json';
 
 const Configurations = () => {
   const { colorMode, toggleColorMode } = useColorMode();
@@ -66,7 +67,7 @@ const Configurations = () => {
             <Text fontSize="lg">Hidden date settings</Text>
             <Switch
               colorScheme="green"
-              isChecked={!JSON.parse(state.customDateWidget) as boolean}
+              isChecked={!isStringTrue(state.customDateWidget)}
               onChange={() => {
                 if (state.customDateWidget === 'true') {
                   return dispatch({ type: 'editCustomDateWidget', payload: 'false' });

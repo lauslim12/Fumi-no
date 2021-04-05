@@ -22,6 +22,7 @@ import { Colors } from '../../types/Enums';
 import UserContext from '../../utils/config';
 import { radioValues } from '../../utils/constants';
 import { numberToMonth } from '../../utils/date';
+import { isStringTrue } from '../../utils/json';
 
 type Props = {
   blessing: string;
@@ -69,7 +70,7 @@ const AdditionForm = ({
 
   return (
     <VStack spacing={4}>
-      {(JSON.parse(customDateWidget) as boolean) ? (
+      {isStringTrue(customDateWidget) ? (
         <>
           <FormControl id="day" isRequired isDisabled={isToday}>
             <FormLabel>Day of the good thing.</FormLabel>
