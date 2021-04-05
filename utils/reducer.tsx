@@ -1,21 +1,5 @@
 import { Action, Configuration } from '../types/Data';
-import { DefaultConfig } from './constants';
-
-/**
- * Type to manage the 'setLocalConfig' function.
- */
-type TKey = keyof Configuration;
-type TValue = typeof DefaultConfig[TKey];
-
-/**
- * This function is used to set the user's state into the browser's local storage.
- *
- * @param key - Key of all configuration type.
- * @param value - Value that we want to change.
- */
-const setLocalConfig = (key: TKey, value: TValue) => {
-  localStorage.setItem(key, JSON.stringify(value));
-};
+import { setLocalConfig } from './config';
 
 /**
  * Reducer to help manage global state manipulations.

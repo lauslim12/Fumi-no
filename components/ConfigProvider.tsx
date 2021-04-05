@@ -1,29 +1,7 @@
 import { memo, ReactNode, useEffect, useMemo, useReducer } from 'react';
 import ConfigReducer from '../utils/reducer';
-import UserContext from '../utils/config';
-import { ConfigKeys, DefaultConfig } from '../utils/constants';
-
-/**
- * A helper function to get all data from the local storage.
- * This function also maps them according to all of the possible keys.
- *
- * @returns A modified object according to the local storage.
- */
-const getLocalConfig = () => {
-  const newObject = { ...DefaultConfig };
-
-  for (const key of ConfigKeys) {
-    const item = localStorage.getItem(key);
-
-    try {
-      newObject[key] = JSON.parse(item || '');
-    } catch {
-      // Ignored.
-    }
-  }
-
-  return newObject;
-};
+import UserContext, { getLocalConfig } from '../utils/config';
+import { DefaultConfig } from '../utils/constants';
 
 /**
  * Provider function to help provide values for the context.

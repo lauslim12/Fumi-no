@@ -1,3 +1,4 @@
+import { DefaultConfig } from '../utils/constants';
 import { Colors, Days, Months } from './Enums';
 
 /**
@@ -22,6 +23,10 @@ export type Configuration = {
   data: Data[];
   customDateWidget: 'true' | 'false';
 };
+
+export type ConfigurationKey = keyof Configuration;
+
+export type ConfigurationValues = typeof DefaultConfig[ConfigurationKey];
 
 /**
  * Types for the reducer.
