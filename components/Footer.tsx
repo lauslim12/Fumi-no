@@ -11,25 +11,29 @@ const Footer = () => (
 
     <HStack spacing={4} justify="center">
       <Tooltip label="GitHub">
-        <Link href="https://github.com/lauslim12/Fumi-no" isExternal>
+        <Link href="https://github.com/lauslim12/Fumi-no" aria-label="GitHub" isExternal>
           <Icon as={FaGithub} />
         </Link>
       </Tooltip>
 
       <Tooltip label="StackOverflow">
-        <Link href="https://stackoverflow.com/users/13980107/nicholas-d" isExternal>
+        <Link
+          href="https://stackoverflow.com/users/13980107/nicholas-d"
+          aria-label="StackOverflow"
+          isExternal
+        >
           <Icon as={FaStackOverflow} />
         </Link>
       </Tooltip>
 
       <Tooltip label="LinkedIn">
-        <Link href="https://www.linkedin.com/in/nicholasdwiarto/" isExternal>
+        <Link href="https://www.linkedin.com/in/nicholasdwiarto/" aria-label="LinkedIn" isExternal>
           <Icon as={FaLinkedin} />
         </Link>
       </Tooltip>
 
       <Tooltip label="nicholasdw.com">
-        <Link href="https://nicholasdw.com" isExternal>
+        <Link href="https://nicholasdw.com" aria-label="Website" isExternal>
           <Icon as={FaHeart} />
         </Link>
       </Tooltip>
