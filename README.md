@@ -82,7 +82,7 @@ It will activate the Vercel CLI. You may need to log in first and provide your d
 
 ## Contribution
 
-I accept all kinds of contributions. Feel free to submit a pull request or submit an issue if you encounter any issues!
+I accept all kinds of contributions. Don't forget to read the `CONTRIBUTING.md` file first. Feel free to submit a pull request or submit an issue if you encounter any issues!
 
 ## License
 
