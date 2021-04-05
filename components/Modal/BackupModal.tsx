@@ -27,15 +27,13 @@ type Props = {
 };
 
 const BackupModal = ({ open, setOpen }: Props) => {
-  const { data, setData } = useContext(UserContext);
-  const stringifiedData = useMemo(() => JSON.stringify(data, null, 2), [data]);
-  const { hasCopied, onCopy } = useClipboard(stringifiedData);
-  const [textData, setTextData] = useState('');
+  const { state, dispatch } = useContext(UserContext);
+  const stringifiedData = useMemo(() => JSON.stringify(state, null, 2), [state]);
+  const [textData, setTextData] = useState(stringifiedData);
+  const { hasCopied, onCopy } = useClipboard(textData);
   const toast = useToast();
 
-  useEffect(() => {
-    setTextData(JSON.stringify(data, null, 2));
-  }, [data]);
+  useEffect(() => setTextData(JSON.stringify(state, null, 2)), [state]);
 
   const overwriteData = () => {
     const isDataValid = jsonValidate(textData);
@@ -50,7 +48,7 @@ const BackupModal = ({ open, setOpen }: Props) => {
       });
     }
 
-    setData(JSON.parse(textData));
+    dispatch({ type: 'overwriteData', payload: JSON.parse(textData) });
     setOpen(false);
 
     toast({

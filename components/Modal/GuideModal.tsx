@@ -186,6 +186,12 @@ const GuideModal = ({ open, setOpen }: Props) => (
               emoji="🔧"
               text="Don't forget to play around with the configurations!"
             />
+
+            <AccessibleEmoji
+              label="Question"
+              emoji="🙋"
+              text="If you have any issues or questions, let me know in GitHub!"
+            />
           </ModalSection>
 
           <ModalSection header="Credits">

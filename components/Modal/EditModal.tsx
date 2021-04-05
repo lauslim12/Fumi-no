@@ -27,7 +27,7 @@ type Props = {
 };
 
 const EditModal = ({ open, setOpen, currentData }: Props) => {
-  const { data, setData } = useContext(UserContext);
+  const { dispatch } = useContext(UserContext);
   const [blessing, setBlessing] = useState(currentData.blessing);
   const [color, setColor] = useState(currentData.color);
   const [day, setDay] = useState(currentData.day as number);
@@ -46,10 +46,8 @@ const EditModal = ({ open, setOpen, currentData }: Props) => {
       month: month as Months,
       year: year,
     };
-    const indexOfData = data.findIndex((blessing) => blessing.id === currentData.id);
-    const newState = [...data.slice(0, indexOfData), newData, ...data.slice(indexOfData + 1)];
 
-    setData(newState);
+    dispatch({ type: 'editData', payload: { currentId: currentData.id, data: newData } });
     setOpen(false);
 
     toast({
@@ -64,10 +62,7 @@ const EditModal = ({ open, setOpen, currentData }: Props) => {
   const handleDelete = (e: FormEvent) => {
     e.preventDefault();
 
-    const indexOfData = data.findIndex((blessing) => blessing.id === currentData.id);
-    const newState = [...data.slice(0, indexOfData), ...data.slice(indexOfData + 1)];
-
-    setData(newState);
+    dispatch({ type: 'deleteData', payload: currentData.id });
     setOpen(false);
 
     toast({

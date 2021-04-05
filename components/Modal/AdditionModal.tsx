@@ -27,7 +27,7 @@ type Props = {
 };
 
 const AdditionModal = ({ open, setOpen }: Props) => {
-  const { setData } = useContext(UserContext);
+  const { dispatch } = useContext(UserContext);
   const [blessing, setBlessing] = useState('');
   const [color, setColor] = useState('red' as Colors);
   const [day, setDay] = useState(new Date().getDate());
@@ -48,7 +48,7 @@ const AdditionModal = ({ open, setOpen }: Props) => {
       year: year,
     };
 
-    setData((prevData) => [...prevData, newData]);
+    dispatch({ type: 'addData', payload: newData });
     setOpen(false);
     setBlessing('');
     setColor('red');

@@ -7,7 +7,9 @@ import CustomIconBtn from './CustomIconBtn';
 import BlessingCard from './BlessingCard';
 
 const Blessings = () => {
-  const { data: allBlessings } = useContext(UserContext);
+  const {
+    state: { data: allBlessings },
+  } = useContext(UserContext);
   const [currentMonth, setCurrentMonth] = useState(new Date().getMonth());
   const [currentYear, setCurrentYear] = useState(new Date().getFullYear());
   const allData = useMemo(
@@ -47,10 +49,6 @@ const Blessings = () => {
 
   return (
     <VStack mt={5} textAlign="center">
-      <Heading as="h3" size="md" mb={5}>
-        Hello! Tell me about your day! Write your stories here!
-      </Heading>
-
       <Flex align={['center', 'flex-start']} justify={['center', 'flex-start']} w="full" px={2}>
         <Heading as="h2" size="lg" fontWeight="600">
           Blessings

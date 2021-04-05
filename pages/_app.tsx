@@ -8,31 +8,36 @@ import { DefaultSeo } from 'next-seo';
 
 import { SEO } from '../utils/seo';
 import NProgress from '../components/NProgress';
+import useScrollPreserver from '../utils/scrollPreserver';
 
 const fallbackFonts =
   '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"';
 
-const App = ({ Component, pageProps }: AppProps) => (
-  <ChakraProvider
-    resetCSS
-    theme={extendTheme({
-      fonts: {
-        body: `Quicksand, ${fallbackFonts}`,
-        heading: `Raleway, ${fallbackFonts}`,
-      },
-      components: {
-        Heading: {
-          baseStyle: {
-            fontWeight: 200,
+const App = ({ Component, pageProps }: AppProps) => {
+  useScrollPreserver();
+
+  return (
+    <ChakraProvider
+      resetCSS
+      theme={extendTheme({
+        fonts: {
+          body: `Quicksand, ${fallbackFonts}`,
+          heading: `Raleway, ${fallbackFonts}`,
+        },
+        components: {
+          Heading: {
+            baseStyle: {
+              fontWeight: 200,
+            },
           },
         },
-      },
-    })}
-  >
-    <DefaultSeo {...SEO} />
-    <NProgress />
-    <Component {...pageProps} />
-  </ChakraProvider>
-);
+      })}
+    >
+      <DefaultSeo {...SEO} />
+      <NProgress />
+      <Component {...pageProps} />
+    </ChakraProvider>
+  );
+};
 
 export default App;
