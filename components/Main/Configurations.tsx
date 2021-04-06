@@ -9,7 +9,6 @@ import {
   HStack,
   Icon,
   Switch,
-  Text,
   useColorMode,
   VStack,
 } from '@chakra-ui/react';
@@ -42,8 +41,11 @@ const Configurations = () => {
         <VStack spacing={4} align="start">
           <HStack spacing={4}>
             <Icon as={FaBarcode} boxSize={5} />
-            <Text fontSize="lg">Your name</Text>
+            <FormLabel htmlFor="your-name" fontSize="lg">
+              Your name
+            </FormLabel>
             <Editable
+              id="your-name"
               value={state.name}
               fontSize="lg"
               onChange={(value) => dispatch({ type: 'editName', payload: value })}
