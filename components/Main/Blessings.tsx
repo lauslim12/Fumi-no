@@ -1,4 +1,4 @@
-import { Flex, Grid, Heading, HStack, Spacer, VStack } from '@chakra-ui/layout';
+import { Flex, Grid, Heading, HStack, Spacer, VStack } from '@chakra-ui/react';
 import { memo, useContext, useMemo, useState } from 'react';
 import { FaChevronCircleLeft, FaChevronCircleRight, FaChevronCircleDown } from 'react-icons/fa';
 import UserContext from '../../utils/config';
@@ -61,17 +61,17 @@ const Blessings = () => {
         <Spacer />
 
         <HStack spacing={3}>
-          <div onClick={() => handleDateChange('prev')}>
+          <button type="button" onClick={() => handleDateChange('prev')}>
             <CustomIconBtn ariaLabel="Previous month" customIcon={<FaChevronCircleLeft />} />
-          </div>
+          </button>
 
-          <div onClick={() => handleDateChange('current')}>
+          <button type="button" onClick={() => handleDateChange('current')}>
             <CustomIconBtn ariaLabel="Current month" customIcon={<FaChevronCircleDown />} />
-          </div>
+          </button>
 
-          <div onClick={() => handleDateChange('next')}>
+          <button type="button" onClick={() => handleDateChange('next')}>
             <CustomIconBtn ariaLabel="Next month" customIcon={<FaChevronCircleRight />} />
-          </div>
+          </button>
         </HStack>
       </Flex>
 

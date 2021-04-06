@@ -1,5 +1,4 @@
-import { useColorModeValue } from '@chakra-ui/color-mode';
-import { Divider, Heading, Spacer, Text, VStack } from '@chakra-ui/layout';
+import { Divider, Heading, Spacer, Text, useColorModeValue, VStack } from '@chakra-ui/react';
 import { memo, useState } from 'react';
 import { Data } from '../../types/Data';
 import { numberToDay, numberToMonth } from '../../utils/date';

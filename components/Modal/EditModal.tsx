@@ -44,7 +44,7 @@ const EditModal = ({ open, setOpen, currentData }: Props) => {
       color,
       day: day as Days,
       month: month as Months,
-      year: year,
+      year,
     };
 
     dispatch({ type: 'editData', payload: { currentId: currentData.id, data: newData } });

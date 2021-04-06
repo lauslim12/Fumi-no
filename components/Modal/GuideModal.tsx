@@ -87,9 +87,9 @@ const GuideModal = ({ open, setOpen }: Props) => (
           <ModalSection header="Why?">
             <Text>
               In order for us to be grateful with what we have (or had), it is essential for us to
-              remember them. These days, most of people are diagnosed with what they call 'Seasonal
-              Affective Disorder', which is a form of mood-swings that occurs randomly throughout
-              the year.
+              remember them. These days, most of people are diagnosed with what they call
+              &lsquo;Seasonal Affective Disorder&rsquo;, which is a form of mood-swings that occurs
+              randomly throughout the year.
             </Text>
 
             <Text>
@@ -197,8 +197,8 @@ const GuideModal = ({ open, setOpen }: Props) => (
           <ModalSection header="Credits">
             <Text>
               Feel free to check for the credits in the GitHub repository (link on the footer)! As a
-              disclaimer, I do not collect any data. This application is powered by your browser's
-              local storage. No data are sent to any servers!
+              disclaimer, I do not collect any data. This application is powered by your
+              browser&quot;s local storage. No data are sent to any servers!
             </Text>
           </ModalSection>
         </VStack>

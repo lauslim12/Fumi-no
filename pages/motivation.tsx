@@ -1,7 +1,7 @@
+import { NextSeo } from 'next-seo';
 import { memo } from 'react';
 import Luck from '../components/Motivation/Luck';
 import Layout from '../components/Layout';
-import { NextSeo } from 'next-seo';
 import { motivationSEO } from '../utils/seo';
 import Quotes from '../components/Motivation/Quotes';
 

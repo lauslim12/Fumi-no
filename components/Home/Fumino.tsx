@@ -7,7 +7,7 @@ const Fumino = () => (
       Fumi-no
     </Heading>
 
-    <Text as="h2">If written 史乃, it means 'Your History'.</Text>
+    <Text as="h2">If written 史乃, it means &lsquo;Your History&rsquo;.</Text>
     <Text as="h2">So, the question is, what is the good thing that happened to you today?</Text>
   </VStack>
 );
