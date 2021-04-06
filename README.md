@@ -77,6 +77,7 @@ That's it. No settings required!
 I use Vercel for deployment, so you may also use the following command in order to run the deployment script.
 
 ```bash
+npm run format-check
 npm run type-check
 npm run deploy
 ```
