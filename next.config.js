@@ -6,7 +6,11 @@ module.exports = {
         headers: [
           {
             key: 'X-Fumino-Application',
-            value: 'Alicia',
+            value: process.env.NEXT_PUBLIC_APP_VERSION_NAME,
+          },
+          {
+            key: 'X-Fumino-Version',
+            value: process.env.NEXT_PUBLIC_APP_VERSION_NUMBER,
           },
         ],
       },
