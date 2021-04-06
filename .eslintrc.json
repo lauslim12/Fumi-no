@@ -1,0 +1,39 @@
+{
+  "extends": ["airbnb-typescript", "prettier"],
+  "plugins": ["simple-import-sort", "prettier"],
+  "env": {
+    "browser": true,
+    "es6": true
+  },
+  "parserOptions": {
+    "ecmaVersion": 2021,
+    "sourceType": "module",
+    "project": "./tsconfig.json",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "rules": {
+    "simple-import-sort/imports": "off",
+    "simple-import-sort/exports": "off",
+    "react/prop-types": "off",
+    "react/require-default-props": "off"
+  },
+  "overrides": [
+    {
+      "files": ["pages/*.tsx"],
+      "rules": {
+        "react/jsx-props-no-spreading": "off"
+      }
+    },
+    {
+      "files": ["utils/reducer.tsx"],
+      "rules": {
+        "no-case-declarations": "off"
+      }
+    }
+  ],
+  "globals": {
+    "React": "writable"
+  }
+}
