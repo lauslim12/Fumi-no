@@ -13,16 +13,16 @@ const HeaderLink = ({ href, text }: Props) => {
   const router = useRouter();
 
   return (
-    <NextLink as={href} href={href} passHref>
-      <Box
-        cursor="pointer"
-        color={href === router.pathname ? '#2ecc71' : 'inherit'}
-        _hover={{ textColor: '#2ecc71', textDecor: 'underline' }}
-        _focus={{ textColor: '#2ecc71', textDecor: 'underline' }}
-      >
+    <Box
+      cursor="pointer"
+      color={href === router.pathname ? '#2ecc71' : 'inherit'}
+      _hover={{ textColor: '#2ecc71', textDecor: 'underline' }}
+      _focus={{ textColor: '#2ecc71', textDecor: 'underline' }}
+    >
+      <NextLink as={href} href={href} passHref>
         {text}
-      </Box>
-    </NextLink>
+      </NextLink>
+    </Box>
   );
 };
 
