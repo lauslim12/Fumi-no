@@ -5,7 +5,7 @@ import { FaGithub, FaHeart, FaLinkedin, FaStackOverflow } from 'react-icons/fa';
 const Footer = () => (
   <VStack as="footer" align="stretch" p={3} spacing={1} color="gray.500">
     <chakra.div fontSize="xs" textAlign="center">
-      <Text>Fumino - OSS for your happiness.</Text>
+      <Text>{`Fumino (${process.env.NEXT_PUBLIC_APP_VERSION_NAME}) - OSS for your happiness.`}</Text>
       <Text>{`Copyright © ${new Date().getFullYear()} — Nicholas Dwiarto W.`}</Text>
     </chakra.div>
 
