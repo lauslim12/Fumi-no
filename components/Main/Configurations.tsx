@@ -4,6 +4,7 @@ import {
   EditableInput,
   EditablePreview,
   Flex,
+  FormLabel,
   Heading,
   HStack,
   Icon,
@@ -54,8 +55,11 @@ const Configurations = () => {
 
           <HStack spacing={4}>
             <Icon as={FaMoon} boxSize={5} />
-            <Text fontSize="lg">Dark mode</Text>
+            <FormLabel htmlFor="dark-mode" fontSize="lg">
+              Dark mode
+            </FormLabel>
             <Switch
+              id="dark-mode"
               colorScheme="green"
               isChecked={colorMode === 'dark'}
               onChange={() => toggleColorMode()}
@@ -64,8 +68,11 @@ const Configurations = () => {
 
           <HStack spacing={4}>
             <Icon as={FaTable} boxSize={5} />
-            <Text fontSize="lg">Hidden date settings</Text>
+            <FormLabel htmlFor="custom-date-widget" fontSize="lg">
+              Hidden date settings
+            </FormLabel>
             <Switch
+              id="custom-date-widget"
               colorScheme="green"
               isChecked={!isStringTrue(state.customDateWidget)}
               onChange={() => {

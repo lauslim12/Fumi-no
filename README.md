@@ -35,6 +35,7 @@ The application's storage is mostly powered by your browser's local storage. I d
 - Customizable configurations to personalize your web-powered happiness jar.
 - Small microinteractions exist for good UX.
 - Dark mode support, in case you love writing in the night.
+- Full accessbility support (`a11y`).
 
 ## Installation
 
