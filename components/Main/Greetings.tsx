@@ -21,10 +21,10 @@ const Greetings = () => {
       </Heading>
 
       <Heading as="h2" size="md">
-        Hello! Tell me about your day! Write your stories here!
+        Write your stories here!
       </Heading>
 
-      <Heading as="h5" size="md" mb={5}>
+      <Heading as="h3" size="sm" mb={5}>
         {`Time: ${currentTime.toLocaleDateString()} — ${currentTime.toLocaleTimeString('en-GB')}`}
       </Heading>
     </VStack>

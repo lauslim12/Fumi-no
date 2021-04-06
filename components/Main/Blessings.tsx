@@ -75,20 +75,24 @@ const Blessings = () => {
         </HStack>
       </Flex>
 
-      {allData.length ? (
-        <Grid
-          templateColumns={['1fr', 'repeat(3, 1fr)', 'repeat(5, 1fr)', 'repeat(7, 1fr)']}
-          gap={3}
-        >
-          {allData.map((blessing) => (
-            <BlessingCard key={blessing.id} data={blessing} />
-          ))}
-        </Grid>
-      ) : (
-        <Heading as="h5" size="md">
-          No data found for this month! Maybe add one?
-        </Heading>
-      )}
+      <VStack minH="75vh">
+        {allData.length ? (
+          <Grid
+            templateColumns={['1fr', 'repeat(3, 1fr)', 'repeat(5, 1fr)', 'repeat(7, 1fr)']}
+            gap={3}
+          >
+            {allData.map((blessing) => (
+              <BlessingCard key={blessing.id} data={blessing} />
+            ))}
+          </Grid>
+        ) : (
+          <VStack minH="75vh" justify="center">
+            <Heading as="h4" size="sm">
+              No data found for this month!
+            </Heading>
+          </VStack>
+        )}
+      </VStack>
     </VStack>
   );
 };
