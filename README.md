@@ -78,6 +78,7 @@ I use Vercel for deployment, so you may also use the following command in order 
 
 ```bash
 npm run format-check
+npm run lint
 npm run type-check
 npm run deploy
 ```
