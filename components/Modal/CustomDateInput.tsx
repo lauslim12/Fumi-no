@@ -11,7 +11,7 @@ import {
   Select,
 } from '@chakra-ui/react';
 import { Dispatch, memo, SetStateAction, useState } from 'react';
-import { numberToMonth } from '../../utils/date';
+import { monthArrayObject, numberToMonth } from '../../utils/date';
 
 type Props = {
   day: number;
@@ -66,13 +66,11 @@ const CustomDateInput = ({ day, month, year, setDay, setMonth, setYear }: Props)
           variant="filled"
           onChange={({ currentTarget: { value } }) => setMonth(parseInt(value.toString(), 10))}
         >
-          {Array(12)
-            .fill(0)
-            .map((_, i) => (
-              <option key={i} value={i}>
-                {numberToMonth(i)}
-              </option>
-            ))}
+          {monthArrayObject.map((item) => (
+            <option key={item.key} value={item.month}>
+              {numberToMonth(item.month)}
+            </option>
+          ))}
         </Select>
         <FormHelperText>In case you want to fill in the other days!</FormHelperText>
       </FormControl>

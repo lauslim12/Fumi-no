@@ -45,7 +45,7 @@ const AdditionModal = ({ open, setOpen }: Props) => {
       color,
       day: day as Days,
       month: month as Months,
-      year: year,
+      year,
     };
 
     dispatch({ type: 'addData', payload: newData });

@@ -1,8 +1,7 @@
 import { chakra, Flex, VStack } from '@chakra-ui/react';
 import { GoogleFonts } from 'next-google-fonts';
 import Head from 'next/head';
-import { memo } from 'react';
-import { ReactNode } from 'react';
+import { memo, ReactNode } from 'react';
 import Footer from './Footer';
 import Header from './Header';
 

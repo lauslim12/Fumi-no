@@ -26,6 +26,4 @@ export const jsonValidate = (str: string): boolean => {
  * @param str - Either 'true' or 'false'
  * @returns A boolean, symbolizing the boolean value of the 'true' or 'false'.
  */
-export const isStringTrue = (str: 'true' | 'false'): boolean => {
-  return JSON.parse(str);
-};
+export const isStringTrue = (str: 'true' | 'false'): boolean => JSON.parse(str);

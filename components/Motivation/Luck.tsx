@@ -1,4 +1,4 @@
-import { Heading, Text, VStack } from '@chakra-ui/layout';
+import { Heading, Text, VStack } from '@chakra-ui/react';
 import { memo } from 'react';
 
 const Luck = () => (

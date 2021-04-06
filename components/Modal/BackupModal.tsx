@@ -51,7 +51,7 @@ const BackupModal = ({ open, setOpen }: Props) => {
     dispatch({ type: 'overwriteData', payload: JSON.parse(textData) });
     setOpen(false);
 
-    toast({
+    return toast({
       title: 'Data overwritten!',
       description: 'Your data has been successfully replaced!',
       status: 'success',

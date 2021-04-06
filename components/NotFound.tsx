@@ -1,8 +1,8 @@
 import { VStack, Heading, Text, Button } from '@chakra-ui/react';
-import { memo } from 'react';
 import NextLink from 'next/link';
-import routes from '../utils/routes';
+import { memo } from 'react';
 import { FaHome } from 'react-icons/fa';
+import routes from '../utils/routes';
 
 const NotFound = () => (
   <VStack spacing={3}>

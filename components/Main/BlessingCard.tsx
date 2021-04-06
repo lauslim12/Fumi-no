@@ -1,5 +1,4 @@
-import { useColorModeValue } from '@chakra-ui/color-mode';
-import { Divider, Heading, Spacer, Text, VStack } from '@chakra-ui/layout';
+import { Divider, Heading, Spacer, Text, useColorModeValue, VStack } from '@chakra-ui/react';
 import { memo, useState } from 'react';
 import { Data } from '../../types/Data';
 import { numberToDay, numberToMonth } from '../../utils/date';
@@ -29,7 +28,10 @@ const BlessingCard = ({ data }: Props) => {
         w="full"
         cursor="pointer"
         _hover={{ opacity: 0.7, transform: 'scale(1.05)', transition: 'all 0.5s ease' }}
+        _focus={{ opacity: 0.7, transform: 'scale(1.05)', transition: 'all 0.5s ease' }}
         onClick={() => setOpen(true)}
+        tabIndex={0}
+        onKeyPress={() => setOpen(true)}
       >
         <Heading as="h5" size="md" fontWeight="500">{`${numberToMonth(data.month)} ${
           data.day

@@ -1,6 +1,6 @@
 import { createContext, Dispatch } from 'react';
-import { Configuration, Action, ConfigurationKey, ConfigurationValues } from '../types/Data';
-import { ConfigKeys, DefaultConfig } from './constants';
+import { Configuration, Action } from '../types/Data';
+import { configKeys, DefaultConfig } from './constants';
 
 /**
  * Creation of a new context to store global states.
@@ -23,7 +23,7 @@ const UserContext = createContext<{
 export const getLocalConfig = () => {
   const newObject = { ...DefaultConfig };
 
-  for (const key of ConfigKeys) {
+  configKeys.forEach((key) => {
     const item = localStorage.getItem(key);
 
     try {
@@ -31,7 +31,7 @@ export const getLocalConfig = () => {
     } catch {
       // Ignored.
     }
-  }
+  });
 
   return newObject;
 };
@@ -42,7 +42,10 @@ export const getLocalConfig = () => {
  * @param key - Key of all configuration type.
  * @param value - Value that we want to change.
  */
-export const setLocalConfig = (key: ConfigurationKey, value: ConfigurationValues) => {
+export const setLocalConfig = (
+  key: keyof Configuration,
+  value: typeof DefaultConfig[keyof Configuration]
+) => {
   localStorage.setItem(key, JSON.stringify(value));
 };
 

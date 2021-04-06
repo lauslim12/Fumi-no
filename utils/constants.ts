@@ -7,7 +7,7 @@ export const DefaultConfig: Configuration = {
   customDateWidget: 'false',
 };
 
-export const ConfigKeys = Object.keys(DefaultConfig) as (keyof Configuration)[];
+export const configKeys = Object.keys(DefaultConfig) as (keyof Configuration)[];
 
 export const radioValues: Colors[] = [
   'red',
