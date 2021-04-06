@@ -16,6 +16,9 @@ jobs:
           name: Prettier check
           command: npm run format-check
       - run:
+          name: ESLint check
+          command: npm run lint
+      - run:
           name: TypeScript check
           command: npm run type-check
 
