@@ -17,7 +17,7 @@ jobs:
           command: npm run format-check
       - run:
           name: ESLint check
-          command: npm run lint
+          command: npm run eslint-check
       - run:
           name: TypeScript check
           command: npm run type-check
