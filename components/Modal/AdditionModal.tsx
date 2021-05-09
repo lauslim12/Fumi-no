@@ -41,7 +41,7 @@ const AdditionModal = ({ open, setOpen }: Props) => {
 
     const currentDate = new Date();
     const newData: Data = {
-      id: `${currentDate.getMonth()}-${currentDate.getFullYear()}-${color}-${currentDate.getTime()}`,
+      id: currentDate.getTime().toString(),
       blessing,
       color,
       day: day as Days,
