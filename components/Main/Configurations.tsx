@@ -13,11 +13,12 @@ import {
   VStack,
 } from '@chakra-ui/react';
 import { memo, useContext, useState } from 'react';
-import { FaCodeBranch, FaBookOpen, FaBarcode, FaMoon, FaTable } from 'react-icons/fa';
-import BackupModal from '../Modal/BackupModal';
-import AdditionModal from '../Modal/AdditionModal';
+import { FaBarcode, FaBookOpen, FaCodeBranch, FaMoon, FaTable } from 'react-icons/fa';
+
 import UserContext from '../../utils/config';
 import { isStringTrue } from '../../utils/json';
+import AdditionModal from '../Modal/AdditionModal';
+import BackupModal from '../Modal/BackupModal';
 
 const Configurations = () => {
   const { colorMode, toggleColorMode } = useColorMode();

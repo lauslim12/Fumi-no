@@ -1,6 +1,7 @@
 import { Text, VStack } from '@chakra-ui/react';
 import axios from 'axios';
 import { memo, useEffect, useState } from 'react';
+
 import defaultQuote from '../../db/defaultQuote';
 
 const Quotes = () => {

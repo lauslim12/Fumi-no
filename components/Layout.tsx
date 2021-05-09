@@ -1,6 +1,7 @@
 import { chakra, Flex, VStack } from '@chakra-ui/react';
 import Head from 'next/head';
 import { memo, ReactNode } from 'react';
+
 import Footer from './Footer';
 import Header from './Header';
 

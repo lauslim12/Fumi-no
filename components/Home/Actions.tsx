@@ -2,6 +2,7 @@ import { Button, Stack, Tooltip, useColorMode } from '@chakra-ui/react';
 import NextLink from 'next/link';
 import { memo, useState } from 'react';
 import { FaMoon, FaQuestion, FaRocket } from 'react-icons/fa';
+
 import routes from '../../utils/routes';
 import GuideModal from '../Modal/GuideModal';
 

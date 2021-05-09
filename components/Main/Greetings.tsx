@@ -1,5 +1,6 @@
 import { Heading, VStack } from '@chakra-ui/react';
 import { memo, useContext, useEffect, useState } from 'react';
+
 import UserContext from '../../utils/config';
 
 const Greetings = () => {

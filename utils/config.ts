@@ -1,5 +1,6 @@
 import { createContext, Dispatch } from 'react';
-import { Configuration, Action } from '../types/Data';
+
+import { Action,Configuration } from '../types/Data';
 import { configKeys, DefaultConfig } from './constants';
 
 /**

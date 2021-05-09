@@ -1,10 +1,11 @@
 import { Flex, Grid, Heading, HStack, Spacer, VStack } from '@chakra-ui/react';
 import { memo, useContext, useMemo, useState } from 'react';
-import { FaChevronCircleLeft, FaChevronCircleRight, FaChevronCircleDown } from 'react-icons/fa';
+import { FaChevronCircleDown,FaChevronCircleLeft, FaChevronCircleRight } from 'react-icons/fa';
+
 import UserContext from '../../utils/config';
 import { numberToMonth } from '../../utils/date';
-import CustomIconBtn from './CustomIconBtn';
 import BlessingCard from './BlessingCard';
+import CustomIconBtn from './CustomIconBtn';
 
 const Blessings = () => {
   const {

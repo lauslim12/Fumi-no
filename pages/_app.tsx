@@ -6,9 +6,9 @@ import { ChakraProvider, extendTheme } from '@chakra-ui/react';
 import { AppProps } from 'next/app';
 import { DefaultSeo } from 'next-seo';
 
-import { SEO } from '../utils/seo';
 import NProgress from '../components/NProgress';
 import useScrollPreserver from '../utils/scrollPreserver';
+import { SEO } from '../utils/seo';
 
 const fallbackFonts =
   '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"';

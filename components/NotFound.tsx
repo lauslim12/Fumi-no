@@ -1,7 +1,8 @@
-import { VStack, Heading, Text, Button } from '@chakra-ui/react';
+import { Button,Heading, Text, VStack } from '@chakra-ui/react';
 import NextLink from 'next/link';
 import { memo } from 'react';
 import { FaHome } from 'react-icons/fa';
+
 import routes from '../utils/routes';
 
 const NotFound = () => (
