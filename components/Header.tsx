@@ -2,6 +2,7 @@ import { Box, HStack, Spacer } from '@chakra-ui/react';
 import NextLink from 'next/link';
 import { useRouter } from 'next/router';
 import { memo } from 'react';
+
 import routes from '../utils/routes';
 
 type Props = {

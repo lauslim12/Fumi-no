@@ -1,5 +1,6 @@
 import { Divider, Heading, Spacer, Text, useColorModeValue, VStack } from '@chakra-ui/react';
 import { memo, useState } from 'react';
+
 import { Data } from '../../types/Data';
 import { numberToDay, numberToMonth } from '../../utils/date';
 import EditModal from '../Modal/EditModal';

@@ -16,6 +16,7 @@ import {
 } from '@chakra-ui/react';
 import { Dispatch, FormEvent, memo, SetStateAction, useContext, useState } from 'react';
 import { IoClose, IoPencil } from 'react-icons/io5';
+
 import { Data } from '../../types/Data';
 import { Colors, Days, Months } from '../../types/Enums';
 import UserContext from '../../utils/config';
@@ -40,7 +41,7 @@ const AdditionModal = ({ open, setOpen }: Props) => {
 
     const currentDate = new Date();
     const newData: Data = {
-      id: `${currentDate.getMonth()}-${currentDate.getFullYear()}-${color}-${currentDate.getTime()}`,
+      id: currentDate.getTime().toString(),
       blessing,
       color,
       day: day as Days,

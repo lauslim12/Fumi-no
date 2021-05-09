@@ -26,7 +26,7 @@ Please follow this for the sake of the code to be as readable and maintainable a
 
 ```bash
 npm run format-check
-npm run lint
+npm run eslint-check
 npm run type-check
 ```
 

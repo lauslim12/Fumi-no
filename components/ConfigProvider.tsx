@@ -1,7 +1,8 @@
 import { memo, ReactNode, useEffect, useMemo, useReducer } from 'react';
-import ConfigReducer from '../utils/reducer';
+
 import UserContext, { getLocalConfig } from '../utils/config';
 import { DefaultConfig } from '../utils/constants';
+import ConfigReducer from '../utils/reducer';
 
 /**
  * Provider function to help provide values for the context.
