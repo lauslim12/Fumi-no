@@ -1,6 +1,6 @@
 import { Flex, Grid, Heading, HStack, Spacer, VStack } from '@chakra-ui/react';
 import { memo, useContext, useMemo, useState } from 'react';
-import { FaChevronCircleDown,FaChevronCircleLeft, FaChevronCircleRight } from 'react-icons/fa';
+import { FaChevronCircleDown, FaChevronCircleLeft, FaChevronCircleRight } from 'react-icons/fa';
 
 import UserContext from '../../utils/config';
 import { numberToMonth } from '../../utils/date';
