@@ -10,7 +10,7 @@ Happiness Jar (another name 'Positivity Jar', 'Memory Jar', 'Thank You Jar', and
 
 When you are feeling down, you open the jar and read all of the things that you have put inside, so you realize that your life is something to be treasured. If (hopefully) you never feel down at any point throughout the year, then you open the jar at the end of the year, so you can be grateful of the good year that you have experienced.
 
-These days, most of people are diagnosed with what they call 'Seasonal Affective Disorder', which is a form of mood-swings that occurs randomly throughout the year. According to National Institute of Health (USA), SAD is a seasonal depression that affects close to 10 million Americans. Another research by Medline Plus (USA), SAD occurs in 0 5 to 3 percent of individuals in the entire population!
+These days, most of people are diagnosed with what they call 'Seasonal Affective Disorder', which is a form of mood-swings that occurs randomly throughout the year. According to National Institute of Health (USA), SAD is a seasonal depression that affects close to 10 million Americans. Another research by Medline Plus (USA), SAD occurs in 0.5 to 3 percent of individuals in the entire population!
 
 Being happy is extremely detrimental to your mental health. One good thing a day keeps depression away.
 
@@ -74,12 +74,10 @@ That's it. No settings required!
 
 ## Deployment
 
-I use Vercel for deployment, so you may also use the following command in order to run the deployment script.
+I use Vercel for deployment, so you may also use the following commands in order to run the deployment script.
 
 ```bash
-npm run format-check
 npm run lint
-npm run type-check
 npm run deploy
 ```
 

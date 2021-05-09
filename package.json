@@ -10,7 +10,7 @@
     "format-check": "prettier --check --config ./.prettierrc ./**/*.{js,ts,tsx}",
     "type-check": "tsc --noEmit",
     "eslint-check": "npx eslint . --ext .ts,.tsx",
-    "lint": "npm run format-check && npm run type-check && npm-run eslint-check",
+    "lint": "npm run format-check && npm run type-check && npm run eslint-check",
     "check-updates": "npx ncu",
     "update-deps": "npx ncu -u",
     "deploy": "npx vercel --prod"
