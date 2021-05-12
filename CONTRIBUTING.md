@@ -25,9 +25,9 @@ Please follow this for the sake of the code to be as readable and maintainable a
 - Before you submit your pull request, ensure that you run the following procedures.
 
 ```bash
-npm run format-check
-npm run eslint-check
-npm run type-check
+yarn format-check
+yarn eslint-check
+yarn type-check
 ```
 
 ## Commit Style Guide
@@ -43,3 +43,5 @@ In order to contribute to this project, please create an issue about the problem
 - Make sure to update the `CHANGELOG.md`, and the version number in `package.json`.
 - Commit and push your features / changes.
 - Create a new pull request.
+
+For me, I have to update the Docker image with the updated version, and then I will have to push it to Docker Hub.
