@@ -64,7 +64,7 @@ const BackupModal = ({ open, setOpen }: Props) => {
   return (
     <Modal isOpen={open} onClose={() => setOpen(false)} size="lg">
       <ModalOverlay />
-      <ModalContent>
+      <ModalContent as="form">
         <ModalHeader>Manage data</ModalHeader>
         <ModalCloseButton />
 
