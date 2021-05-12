@@ -1,6 +1,6 @@
 {
   "name": "fumi-no",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "Fumino - OSS for your happiness",
   "private": true,
   "scripts": {
@@ -9,11 +9,11 @@
     "start": "next start",
     "format-check": "prettier --check --config ./.prettierrc ./**/*.{js,ts,tsx}",
     "type-check": "tsc --noEmit",
-    "eslint-check": "npx eslint . --ext .ts,.tsx",
-    "lint": "npm run format-check && npm run type-check && npm run eslint-check",
-    "check-updates": "npx ncu",
-    "update-deps": "npx ncu -u",
-    "deploy": "npx vercel --prod"
+    "eslint-check": "eslint . --ext .ts,.tsx",
+    "lint": "yarn format-check && yarn type-check && yarn eslint-check",
+    "check-updates": "ncu",
+    "update-deps": "ncu -u -p yarn",
+    "deploy": "vercel --prod"
   },
   "repository": {
     "type": "git",
@@ -24,7 +24,7 @@
   "bugs": {
     "url": "https://github.com/lauslim12/Fumi-no/issues"
   },
-  "homepage": "https://fumi-no.com",
+  "homepage": "https://www.fumi-no.com",
   "dependencies": {
     "@chakra-ui/react": "^1.6.1",
     "@emotion/react": "^11.4.0",

@@ -37,6 +37,11 @@ The application's storage is mostly powered by your browser's local storage. I d
 - Dark mode support, in case you love writing in the night.
 - Full accessbility support (`a11y`).
 
+## Requirements
+
+- Node.js 14 and up
+- Yarn 1 and up
+
 ## Installation
 
 In order to run this application locally, do the following steps:
@@ -54,20 +59,20 @@ cd Fumi-no
 Then, install all the required dependencies.
 
 ```bash
-npm install
+yarn
 ```
 
 Run the application in development mode.
 
 ```bash
-npm run dev
+yarn dev
 ```
 
 Run the application in production mode.
 
 ```bash
-npm run build
-npm start
+yarn build
+yarn start
 ```
 
 That's it. No settings required!
@@ -77,11 +82,27 @@ That's it. No settings required!
 I use Vercel for deployment, so you may also use the following commands in order to run the deployment script.
 
 ```bash
-npm run lint
-npm run deploy
+yarn lint
+yarn deploy
 ```
 
 It will activate the Vercel CLI. You may need to log in first and provide your details before deploying the application to the Internet.
+
+## Containerization
+
+In order to package and run this application as a Docker container, you just need to do the following steps.
+
+```bash
+docker build . -t my-fumino-application
+docker run -p 3000:3000 my-fumino-application
+```
+
+Or, you can just pull the latest [Docker image from my Docker Hub](https://hub.docker.com/r/lauslim12/fumi-no), and run it in your local machine. It is **lowercase F, not uppercase F**. Consult `VERSION_NUMBER` in the `package.json` file.
+
+```bash
+docker pull lauslim12/fumi-no:VERSION_NUMBER
+docker run -d -p 3000:3000 lauslim12/fumi-no:VERSION_NUMBER
+```
 
 ## Contribution
 
