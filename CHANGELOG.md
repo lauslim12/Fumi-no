@@ -8,6 +8,9 @@ Changelog is used to keep track of version changes. The versioning scheme used i
 - Add docker for containerization.
 - Replace `npm` scripts with `yarn` scripts.
 - Update workflow to also use Docker.
+- Update npm dependencies.
+- Fix nested buttons bug.
+- Fix backup modal not appearing bug.
 
 ## Version 1.0.1 (09/05/2021)
 
