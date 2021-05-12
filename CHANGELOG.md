@@ -10,7 +10,7 @@ Changelog is used to keep track of version changes. The versioning scheme used i
 - Update workflow to also use Docker.
 - Update npm dependencies.
 - Fix nested buttons bug.
-- Fix backup modal not appearing bug.
+- Fix backup modal and guide modal not appearing bug.
 
 ## Version 1.0.1 (09/05/2021)
 

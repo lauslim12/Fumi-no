@@ -61,7 +61,7 @@ const GuideModal = ({ open, setOpen }: Props) => (
     scrollBehavior="inside"
   >
     <ModalOverlay />
-    <ModalContent>
+    <ModalContent as="div">
       <ModalHeader>About Fumino OSS</ModalHeader>
       <ModalCloseButton />
 
