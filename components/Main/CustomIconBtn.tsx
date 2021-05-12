@@ -8,6 +8,7 @@ type Props = {
 
 const IconBtn = ({ ariaLabel, customIcon }: Props) => (
   <IconButton
+    as="div"
     variant="outline"
     colorScheme="red"
     aria-label={ariaLabel}
