@@ -8,9 +8,9 @@ const Quotes = () => {
   const [quote, setQuote] = useState(defaultQuote);
 
   useEffect(() => {
-    axios.get('https://quotes.rest/qod?language=en').then(({ data: { contents: { quotes } } }) =>
-      setQuote(quotes[0])
-    );
+    axios
+      .get('https://quotes.rest/qod?language=en')
+      .then(({ data: { contents } }) => setQuote(contents.quotes[0]));
   }, []);
 
   return (
