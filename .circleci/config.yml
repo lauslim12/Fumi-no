@@ -8,7 +8,7 @@ jobs:
     executor: node/default
     steps:
       - checkout
-      - node/install-packages
+      - node/install-packages:
           pkg-manager: yarn
       - run:
           name: Check Yarn version
