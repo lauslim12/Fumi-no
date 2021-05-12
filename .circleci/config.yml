@@ -5,9 +5,14 @@ orbs:
 
 jobs:
   lint:
-    executor: node/default
+    docker:
+      - image: 'cimg/base:stable'
     steps:
       - checkout
+      - node/install:
+          install-npm: false
+          install-yarn: true
+          lts: true
       - node/install-packages:
           pkg-manager: yarn
       - run:
