@@ -59,9 +59,5 @@
     "prettier": "^2.2.1",
     "typescript": "^4.2.4",
     "vercel": "^22.0.1"
-  },
-  "engines": {
-    "node": ">=14.x",
-    "yarn": ">=1.x"
   }
 }
