@@ -97,12 +97,7 @@ docker build . -t my-fumino-application
 docker run -p 3000:3000 my-fumino-application
 ```
 
-Or, you can just pull the latest [Docker image from my Docker Hub](https://hub.docker.com/r/lauslim12/fumi-no), and run it in your local machine. It is **lowercase F, not uppercase F**. Consult `VERSION_NUMBER` in the `package.json` file.
-
-```bash
-docker pull lauslim12/fumi-no:VERSION_NUMBER
-docker run -d -p 3000:3000 lauslim12/fumi-no:VERSION_NUMBER
-```
+Or, you can just pull the latest [Docker image from my Docker Hub](https://hub.docker.com/r/lauslim12/fumi-no), and run it in your local machine. It is **lowercase F, not uppercase F**.
 
 ## Contribution
 

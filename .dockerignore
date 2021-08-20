@@ -2,3 +2,10 @@
 .next
 .vercel
 node_modules
+.dockerignore
+CHANGELOG.md
+CODE_OF_CONDUCT.md
+CONTRIBUTING.md
+Dockerfile
+LICENSE
+README.md
