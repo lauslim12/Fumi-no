@@ -2,7 +2,7 @@ name: Next.js
 
 on:
   pull_request:
-    branches: [fumi-no]
+    branches: [fumino]
 
 jobs:
   next-ci:

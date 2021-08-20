@@ -2,7 +2,7 @@ name: Docker
 
 on:
   push:
-    branches: [fumi-no]
+    branches: [fumino]
 
 jobs:
   docker-ci:
