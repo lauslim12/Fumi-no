@@ -39,36 +39,38 @@ The application's storage is mostly powered by your browser's local storage. I d
 
 ## Requirements
 
-- Node.js 14 and up
-- Yarn 1 and up
+- [Node.js 14+](https://nodejs.org/)
+- [Yarn 1.22+](https://yarnpkg.com/)
 
 ## Installation
 
 In order to run this application locally, do the following steps:
 
+- Clone the repository first.
+
 ```bash
 git clone https://github.com/lauslim12/Fumi-no.git
 ```
 
-Change directory to the cloned repository.
+- Change directory to the cloned repository.
 
 ```bash
 cd Fumi-no
 ```
 
-Then, install all the required dependencies.
+- Then, install all the required dependencies.
 
 ```bash
-yarn
+yarn --frozen-lockfile
 ```
 
-Run the application in development mode.
+- Run the application in development mode.
 
 ```bash
 yarn dev
 ```
 
-Run the application in production mode.
+- Run the application in production mode.
 
 ```bash
 yarn build
@@ -77,16 +79,20 @@ yarn start
 
 That's it. No settings required!
 
-## Deployment
+## Update
 
-I use Vercel for deployment, so you may also use the following commands in order to run the deployment script.
+In order to update dependencies, you can run the following command.
 
 ```bash
-yarn lint
-yarn deploy
+yarn outdated
+yarn upgrade-interactive --latest
 ```
 
-It will activate the Vercel CLI. You may need to log in first and provide your details before deploying the application to the Internet.
+Follow the instructions in the CLI so they can be updated!
+
+## Deployment
+
+I use Vercel for deployment, and it is connected to this GitHub repository. Learn how to do deployment with Vercel by [following the instructions](https://vercel.com/docs/platform/deployments).
 
 ## Containerization
 
@@ -97,7 +103,7 @@ docker build . -t my-fumino-application
 docker run -p 3000:3000 my-fumino-application
 ```
 
-Or, you can just pull the latest [Docker image from my Docker Hub](https://hub.docker.com/r/lauslim12/fumi-no), and run it in your local machine. It is **lowercase F, not uppercase F**.
+Or, you can just pull the latest [Docker image from my Docker Hub](https://hub.docker.com/r/lauslim12/fumi-no), and run it in your local machine. It is **lowercase F, not uppercase F**. Sort it by the 'newest' to see the latest version of this application!
 
 ## Contribution
 
