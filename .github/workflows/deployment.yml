@@ -1,11 +1,11 @@
-name: Docker
+name: Docker and Vercel
 
 on:
   push:
     branches: [fumino]
 
 jobs:
-  docker-ci:
+  deployment-ci:
     runs-on: ubuntu-latest
 
     steps:
@@ -29,3 +29,10 @@ jobs:
         with:
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/fumi-no:${{ github.sha }}
+
+      - name: Deploy production version to Vercel
+        uses: amondnet/vercel-action@v20
+        with:
+          vercel-token: ${{ secrets.VERCEL_TOKEN }}
+          vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
+          vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
