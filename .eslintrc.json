@@ -1,5 +1,5 @@
 {
-  "extends": ["airbnb-typescript", "prettier"],
+  "extends": ["airbnb", "airbnb-typescript", "prettier"],
   "plugins": ["simple-import-sort", "prettier"],
   "env": {
     "browser": true,
