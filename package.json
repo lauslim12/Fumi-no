@@ -9,14 +9,14 @@
     "start": "next start",
     "format-check": "prettier --check --config ./.prettierrc ./**/*.{js,ts,tsx}",
     "type-check": "tsc --noEmit",
-    "eslint-check": "eslint . --ext .ts,.tsx",
+    "eslint-check": "next lint",
     "lint": "yarn format-check && yarn type-check && yarn eslint-check"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/lauslim12/Fumi-no.git"
   },
-  "author": "Nicholas Dwiarto <nicholasdwiarto@yahoo.com> (https://nicholasdw.com)",
+  "author": "Nicholas Dwiarto <nicholasdwiarto@yahoo.com> (https://www.nicholasdw.com)",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/lauslim12/Fumi-no/issues"
