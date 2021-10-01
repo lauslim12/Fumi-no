@@ -2,6 +2,12 @@
 
 Changelog is used to keep track of version changes. The versioning scheme used is [SemVer](https://semver.org/). First integer is used for breaking change, second integer is used for major patches, and third integer is used for minor bug fixes. Named versions will probably change after a breaking or major change.
 
+## Version 1.1.4 (01/10/2021)
+
+- Fix security vulnerabilities.
+- Change ESLint to be Next.js's recommended one.
+- Update all dependencies.
+
 ## Version 1.1.3 (20/08/2021)
 
 - Fix security vulnerabilities.
