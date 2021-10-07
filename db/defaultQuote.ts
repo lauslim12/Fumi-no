@@ -1,8 +1,8 @@
 import Quote from '../types/Quote';
 
 const defaultQuote: Quote = {
-  author: 'Nicholas Dwiarto W.',
-  quote: 'Pioneer of the Stars.',
+  author: 'The Developer',
+  quote: 'Everything is possible if you put in the effort.',
   length: '21',
   tags: ['motivation'],
   category: 'inspire',
