@@ -10,7 +10,7 @@ const Quotes = () => {
   useEffect(() => {
     axios
       .get('https://quotes.rest/qod?language=en')
-      .then(({ data: { contents } }) => setQuote(contents.quotes[0]));
+      .then(({ data: { contents } }: any) => setQuote(contents.quotes[0]));
   }, []);
 
   return (
