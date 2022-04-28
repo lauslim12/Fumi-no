@@ -1,5 +1,6 @@
 /** @type {import('next').NextConfig} */
 module.exports = {
+  // Special headers.
   async headers() {
     return [
       {
@@ -17,5 +18,10 @@ module.exports = {
       },
     ];
   },
+
+  // Enable minification.
+  swcMinify: true,
+
+  // Enable strict mode.
   reactStrictMode: true,
 };
