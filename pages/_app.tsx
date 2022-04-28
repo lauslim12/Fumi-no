@@ -1,8 +1,14 @@
+import '@fontsource/quicksand/300.css';
+import '@fontsource/quicksand/500.css';
+import '@fontsource/quicksand/600.css';
+import '@fontsource/raleway/400.css';
+import '@fontsource/raleway/500.css';
+import '@fontsource/raleway/700.css';
 import 'focus-visible/dist/focus-visible';
 import '../styles/NProgress.scss';
 import '../styles/Selection.scss';
 
-import { ChakraProvider, extendTheme } from '@chakra-ui/react';
+import { ChakraProvider, extendTheme, ThemeOverride } from '@chakra-ui/react';
 import { AppProps } from 'next/app';
 import { DefaultSeo } from 'next-seo';
 
@@ -24,6 +30,7 @@ const App = ({ Component, pageProps }: AppProps) => {
           body: `Quicksand, ${fallbackFonts}`,
           heading: `Raleway, ${fallbackFonts}`,
         },
+
         components: {
           Heading: {
             baseStyle: {
@@ -31,7 +38,7 @@ const App = ({ Component, pageProps }: AppProps) => {
             },
           },
         },
-      })}
+      } as ThemeOverride)}
     >
       <DefaultSeo {...SEO} />
       <NProgress />
