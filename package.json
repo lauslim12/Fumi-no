@@ -1,6 +1,6 @@
 {
   "name": "fumi-no",
-  "version": "1.1.4",
+  "version": "1.1.5",
   "description": "Fumino - OSS for your happiness",
   "private": true,
   "scripts": {
@@ -23,28 +23,29 @@
   },
   "homepage": "https://www.fumi-no.com",
   "dependencies": {
-    "@chakra-ui/react": "^1.6.9",
-    "@emotion/react": "^11.4.1",
-    "@emotion/styled": "^11.3.0",
-    "axios": "^0.22.0",
+    "@chakra-ui/react": "^1.8.8",
+    "@emotion/react": "^11.9.0",
+    "@emotion/styled": "^11.8.1",
+    "axios": "^0.27.2",
     "focus-visible": "^5.2.0",
-    "framer-motion": "^4.1.17",
-    "next": "11.1.2",
-    "next-seo": "^4.28.1",
+    "framer-motion": "^6.3.2",
+    "next": "12.1.5",
+    "next-seo": "^5.4.0",
     "nprogress": "^0.2.0",
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "react-icons": "^4.3.1",
-    "sass": "^1.42.1"
+    "sass": "^1.51.0"
   },
   "devDependencies": {
+    "@types/node": "^17.0.29",
     "@types/nprogress": "^0.2.0",
-    "@types/react": "^17.0.27",
-    "eslint": "^7.32.0",
-    "eslint-config-next": "^11.1.2",
-    "eslint-config-prettier": "^8.3.0",
+    "@types/react": "^18.0.8",
+    "eslint": "^8.14.0",
+    "eslint-config-next": "^12.1.5",
+    "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-simple-import-sort": "^7.0.0",
-    "prettier": "^2.4.1",
-    "typescript": "^4.4.3"
+    "prettier": "^2.6.2",
+    "typescript": "^4.6.3"
   }
 }
