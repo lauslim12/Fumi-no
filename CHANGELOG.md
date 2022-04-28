@@ -2,6 +2,15 @@
 
 Changelog is used to keep track of version changes. The versioning scheme used is [SemVer](https://semver.org/). First integer is used for breaking change, second integer is used for major patches, and third integer is used for minor bug fixes. Named versions will probably change after a breaking or major change.
 
+## Version 1.1.5 (28/04/2022)
+
+- Fix security vulnerabilities.
+- Update all dependencies.
+- Simplify project structure (removal of `styles`, and merge Prettier/ESLint inside `package.json`).
+- Use `fontsource` to replace Google Fonts.
+- Simplify styles for `NProgress` and `::selection`, placed straight in `_app.tsx`.
+- Simplify codebase yang removing not needed dependencies: `axios` and `sass`.
+
 ## Version 1.1.4 (01/10/2021)
 
 - Fix security vulnerabilities.

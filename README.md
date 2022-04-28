@@ -2,8 +2,6 @@
 
 Have you ever heard of Happiness Jar? This is the web version of it. Fully open source!
 
-Without further ado, let's go check out [Fumi-no](https://fumi-no.com)!
-
 ## Introduction
 
 Happiness Jar (another name 'Positivity Jar', 'Memory Jar', 'Thank You Jar', and many more) is a concept pioneered by Elizabeth Gilbert, the author of the book 'Eat, Pray, Love'. A happiness jar is, like its name, a jar where you put in a daily note of 'good things' or gratitude that you have experienced throughout the day. Usually, you only put one note inside the jar every day.
