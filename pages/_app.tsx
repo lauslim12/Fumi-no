@@ -45,7 +45,7 @@ const App = ({ Component, pageProps }: AppProps) => {
               pointerEvents: 'none',
             },
             '#nprogress .bar': {
-              color: '#79ffe1',
+              bgGradient: 'linear(to-r, #79ffe1, #79ffe1)',
               h: '2px',
               left: 0,
               pos: 'fixed',
@@ -60,17 +60,25 @@ const App = ({ Component, pageProps }: AppProps) => {
           }),
         },
 
+        // Override default fonts.
         fonts: {
           body: `Quicksand, ${fallbackFonts}`,
           heading: `Raleway, ${fallbackFonts}`,
         },
 
+        // Override default component styling.
         components: {
           Heading: {
             baseStyle: {
               fontWeight: 200,
             },
           },
+        },
+
+        // Override default color theme.
+        config: {
+          initialColorMode: 'light',
+          useSystemColorMode: true,
         },
       } as ThemeOverride)}
     >
