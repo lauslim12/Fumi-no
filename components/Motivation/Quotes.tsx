@@ -1,5 +1,4 @@
 import { Text, VStack } from '@chakra-ui/react';
-import axios from 'axios';
 import { memo, useEffect, useState } from 'react';
 
 import defaultQuote from '../../db/defaultQuote';
@@ -8,9 +7,9 @@ const Quotes = () => {
   const [quote, setQuote] = useState(defaultQuote);
 
   useEffect(() => {
-    axios
-      .get('https://quotes.rest/qod?language=en')
-      .then(({ data: { contents } }: any) => setQuote(contents.quotes[0]));
+    fetch('https://quotes.rest/qod?language=en')
+      .then((raw) => raw.json())
+      .then((res) => setQuote(res.contents.quotes[0]));
   }, []);
 
   return (
