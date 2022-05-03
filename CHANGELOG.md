@@ -2,6 +2,13 @@
 
 Changelog is used to keep track of version changes. The versioning scheme used is [SemVer](https://semver.org/). First integer is used for breaking change, second integer is used for major patches, and third integer is used for minor bug fixes. Named versions will probably change after a breaking or major change.
 
+## Version 1.1.6 (03/05/2022)
+
+- Upgrade dependencies.
+- Remove `75vh` in `Blessings.tsx` to prevent too much empty space.
+- Change `Dreamer` to `User` as the default user's name.
+- Rename 'Hidden date settings' to "Hide date in 'Add Data'" for clarity.
+
 ## Version 1.1.5 (28/04/2022)
 
 - Fix security vulnerabilities.
