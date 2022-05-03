@@ -72,7 +72,7 @@ const Configurations = () => {
           <HStack spacing={4}>
             <Icon as={FaTable} boxSize={5} />
             <FormLabel htmlFor="custom-date-widget" fontSize="lg">
-              Hidden date settings
+              Hide date in &lsquo;Add Data&rsquo;
             </FormLabel>
             <Switch
               id="custom-date-widget"

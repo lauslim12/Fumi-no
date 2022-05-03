@@ -2,7 +2,7 @@ import { Configuration } from '../types/Data';
 import { Colors } from '../types/Enums';
 
 export const DefaultConfig: Configuration = {
-  name: 'Dreamer',
+  name: 'User',
   data: [],
   customDateWidget: 'false',
 };
