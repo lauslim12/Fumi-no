@@ -76,7 +76,7 @@ const Blessings = () => {
         </HStack>
       </Flex>
 
-      <VStack minH="75vh">
+      <VStack>
         {allData.length ? (
           <Grid
             templateColumns={['1fr', 'repeat(3, 1fr)', 'repeat(5, 1fr)', 'repeat(7, 1fr)']}
@@ -87,7 +87,7 @@ const Blessings = () => {
             ))}
           </Grid>
         ) : (
-          <VStack minH="75vh" justify="center">
+          <VStack justify="center">
             <Heading as="h4" size="sm">
               No data found for this month!
             </Heading>
