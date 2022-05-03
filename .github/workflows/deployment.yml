@@ -5,7 +5,7 @@ on:
     branches: [fumino]
 
 jobs:
-  deployment-ci:
+  docker:
     runs-on: ubuntu-latest
 
     steps:
@@ -29,6 +29,13 @@ jobs:
         with:
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/fumi-no:${{ github.sha }}
+
+  vercel:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
 
       - name: Deploy production version to Vercel
         uses: amondnet/vercel-action@v20
