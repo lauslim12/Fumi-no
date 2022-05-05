@@ -2,6 +2,11 @@
 
 Changelog is used to keep track of version changes. The versioning scheme used is [SemVer](https://semver.org/). First integer is used for breaking change, second integer is used for major patches, and third integer is used for minor bug fixes. Named versions will probably change after a breaking or major change.
 
+## Version 1.1.7 (05/05/2022)
+
+- Add security headers which conform to [Helmet.js](https://github.com/helmetjs/helmet).
+- Remove `.env` and version name in `Footer.tsx`, it's much easier to let it stay in the network headers via `next.config.js`.
+
 ## Version 1.1.6 (03/05/2022)
 
 - Upgrade dependencies.
