@@ -5,7 +5,7 @@ on:
     branches: [fumino]
 
 jobs:
-  docker:
+  dockerhub:
     runs-on: ubuntu-latest
 
     steps:
